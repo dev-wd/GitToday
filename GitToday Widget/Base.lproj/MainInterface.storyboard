@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="GitToday_Widget" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbE-Ts-bwG" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="lua-ZU-Bgr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIB-Ki-uQ2">
+                                <rect key="frame" x="13" y="6" width="38" height="30"/>
+                                <state key="normal" title="PREV"/>
+                                <connections>
+                                    <action selector="prevButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Ehu-fw-PcN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrF-s5-hhJ">
+                                <rect key="frame" x="267" y="6" width="42" height="30"/>
+                                <state key="normal" title="NEXT"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="bZ2-lN-fFc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QIB-Ki-uQ2" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="0.2" id="1Cx-ib-uoo"/>
+                            <constraint firstItem="HbE-Ts-bwG" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="1PS-YT-W3U"/>
+                            <constraint firstItem="HbE-Ts-bwG" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="6A3-GO-f9K"/>
+                            <constraint firstItem="TrF-s5-hhJ" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="1.8" id="7fg-CL-aqW"/>
+                            <constraint firstItem="HbE-Ts-bwG" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="CSh-93-nuO"/>
+                            <constraint firstItem="QIB-Ki-uQ2" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" multiplier="0.15" id="DfQ-7G-79R"/>
+                            <constraint firstItem="QIB-Ki-uQ2" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.107143" id="N2G-cc-Bur"/>
+                            <constraint firstItem="TrF-s5-hhJ" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.13125" id="NMu-KY-mQv"/>
+                            <constraint firstItem="QIB-Ki-uQ2" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.11875" id="UtJ-aB-Gs6"/>
+                            <constraint firstItem="HbE-Ts-bwG" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="ZWU-Yl-icO"/>
+                            <constraint firstItem="TrF-s5-hhJ" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.107143" id="ebn-g8-Bxe"/>
+                            <constraint firstItem="TrF-s5-hhJ" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" multiplier="0.15" id="hfL-0b-Jqg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="280"/>
+                    <connections>
+                        <outlet property="calendar" destination="HbE-Ts-bwG" id="jxt-Ts-Ydn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="-92"/>
+        </scene>
+    </scenes>
+</document>

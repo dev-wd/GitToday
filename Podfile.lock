@@ -1,0 +1,20 @@
+PODS:
+  - FSCalendar (2.8.1)
+  - SwiftSoup (2.3.0)
+
+DEPENDENCIES:
+  - FSCalendar
+  - SwiftSoup
+
+SPEC REPOS:
+  trunk:
+    - FSCalendar
+    - SwiftSoup
+
+SPEC CHECKSUMS:
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
+
+PODFILE CHECKSUM: 2602bc0c6ea537aef1b0ebf4d743a4beb515e4c5
+
+COCOAPODS: 1.8.4

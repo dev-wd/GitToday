@@ -1,0 +1,1050 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19F3B940B9A44272E7FFE480 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */; };
+		371EFCA5566B4D6B0CEFBB1A /* Pods_GitToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */; };
+		650558DCE5F044CC8EBC37AA /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */; };
+		72B1C9B6FF0A5AC84ABDBFEE /* Pods_GitToday_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */; };
+		EA0C120823E8F65600BE20CF /* ContributionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */; };
+		EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E15240678B400003112 /* GitTodayAlertState.swift */; };
+		EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E1824067A5000003112 /* UIColorExtensions.swift */; };
+		EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C60823E295E900398B39 /* AppDelegate.swift */; };
+		EAD2C60B23E295E900398B39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C60A23E295E900398B39 /* SceneDelegate.swift */; };
+		EAD2C61023E295E900398B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD2C60E23E295E900398B39 /* Main.storyboard */; };
+		EAD2C61223E295ED00398B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAD2C61123E295ED00398B39 /* Assets.xcassets */; };
+		EAD2C61523E295ED00398B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD2C61323E295ED00398B39 /* LaunchScreen.storyboard */; };
+		EAD2C62023E295ED00398B39 /* GitTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C61F23E295ED00398B39 /* GitTodayTests.swift */; };
+		EAD2C62B23E295EE00398B39 /* GitTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C62A23E295EE00398B39 /* GitTodayUITests.swift */; };
+		EAD2C63F23E2967600398B39 /* ContributionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C63E23E2967600398B39 /* ContributionRepository.swift */; };
+		EAD2C64123E2969600398B39 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C64023E2969600398B39 /* Dot.swift */; };
+		EAD2C64323E296CF00398B39 /* ContributionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C64223E296CF00398B39 /* ContributionAPI.swift */; };
+		EAD2C64A23E2AE5200398B39 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD2C64923E2AE5200398B39 /* NotificationCenter.framework */; };
+		EAD2C64D23E2AE5200398B39 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C64C23E2AE5200398B39 /* TodayViewController.swift */; };
+		EAD2C65023E2AE5200398B39 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAD2C64E23E2AE5200398B39 /* MainInterface.storyboard */; };
+		EAD2C65423E2AE5200398B39 /* GitToday Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EAD2C65A23E2C19C00398B39 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */; };
+		EAD2C65E23E3EE7700398B39 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C65D23E3EE7700398B39 /* TodayViewModel.swift */; };
+		EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C66123E3F66B00398B39 /* UserDefaultAPI.swift */; };
+		EAF232F023E8FD2E008A455B /* KeyIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */; };
+		EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F123E8FD60008A455B /* GitTodayError.swift */; };
+		EAF232F423E98100008A455B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F323E98100008A455B /* CalendarViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAD2C61C23E295ED00398B39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD2C5FD23E295E900398B39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD2C60423E295E900398B39;
+			remoteInfo = GitToday;
+		};
+		EAD2C62723E295EE00398B39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD2C5FD23E295E900398B39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD2C60423E295E900398B39;
+			remoteInfo = GitToday;
+		};
+		EAD2C65223E2AE5200398B39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD2C5FD23E295E900398B39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD2C64723E2AE5200398B39;
+			remoteInfo = "GitToday Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAD2C65823E2AE5200398B39 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EAD2C65423E2AE5200398B39 /* GitToday Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_GitTodayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.release.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.release.xcconfig"; sourceTree = "<group>"; };
+		307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.debug.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.debug.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.debug.xcconfig"; sourceTree = "<group>"; };
+		617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.release.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.release.xcconfig"; sourceTree = "<group>"; };
+		6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.release.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.release.xcconfig"; sourceTree = "<group>"; };
+		756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.release.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.debug.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitTodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsUseCase.swift; sourceTree = "<group>"; };
+		EAC52E15240678B400003112 /* GitTodayAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayAlertState.swift; sourceTree = "<group>"; };
+		EAC52E1824067A5000003112 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		EAD2C60523E295E900398B39 /* GitToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD2C60823E295E900398B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAD2C60A23E295E900398B39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EAD2C60F23E295E900398B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAD2C61123E295ED00398B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAD2C61423E295ED00398B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAD2C61623E295ED00398B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD2C61B23E295ED00398B39 /* GitTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD2C61F23E295ED00398B39 /* GitTodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayTests.swift; sourceTree = "<group>"; };
+		EAD2C62123E295ED00398B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD2C62623E295EE00398B39 /* GitTodayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitTodayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD2C62A23E295EE00398B39 /* GitTodayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayUITests.swift; sourceTree = "<group>"; };
+		EAD2C62C23E295EE00398B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD2C63E23E2967600398B39 /* ContributionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionRepository.swift; sourceTree = "<group>"; };
+		EAD2C64023E2969600398B39 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		EAD2C64223E296CF00398B39 /* ContributionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionAPI.swift; sourceTree = "<group>"; };
+		EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GitToday Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD2C64923E2AE5200398B39 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		EAD2C64C23E2AE5200398B39 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		EAD2C64F23E2AE5200398B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		EAD2C65123E2AE5200398B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		EAD2C65D23E3EE7700398B39 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		EAD2C66123E3F66B00398B39 /* UserDefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAPI.swift; sourceTree = "<group>"; };
+		EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIdentifier.swift; sourceTree = "<group>"; };
+		EAF232F123E8FD60008A455B /* GitTodayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayError.swift; sourceTree = "<group>"; };
+		EAF232F323E98100008A455B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAD2C60223E295E900398B39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				371EFCA5566B4D6B0CEFBB1A /* Pods_GitToday.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C61823E295ED00398B39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				650558DCE5F044CC8EBC37AA /* Pods_GitTodayTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C62323E295EE00398B39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F3B940B9A44272E7FFE480 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C64523E2AE5200398B39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C64A23E2AE5200398B39 /* NotificationCenter.framework in Frameworks */,
+				72B1C9B6FF0A5AC84ABDBFEE /* Pods_GitToday_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A74A67A52BF63662E8DB0DD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */,
+				617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */,
+				A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */,
+				84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */,
+				8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */,
+				6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */,
+				307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */,
+				2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D01380DF52A56A601B9405C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */,
+				2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */,
+				B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */,
+				EAD2C64923E2AE5200398B39 /* NotificationCenter.framework */,
+				756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA0C120523E8F5FF00BE20CF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C64223E296CF00398B39 /* ContributionAPI.swift */,
+				EAD2C66123E3F66B00398B39 /* UserDefaultAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EA0C120623E8F60600BE20CF /* UserCase */ = {
+			isa = PBXGroup;
+			children = (
+				EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */,
+			);
+			path = UserCase;
+			sourceTree = "<group>";
+		};
+		EAC52E1724067A3300003112 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAC52E1824067A5000003112 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EAD2C5FC23E295E900398B39 = {
+			isa = PBXGroup;
+			children = (
+				EAD2C60723E295E900398B39 /* GitToday */,
+				EAD2C61E23E295ED00398B39 /* GitTodayTests */,
+				EAD2C62923E295EE00398B39 /* GitTodayUITests */,
+				EAD2C64B23E2AE5200398B39 /* GitToday Widget */,
+				EAD2C60623E295E900398B39 /* Products */,
+				A74A67A52BF63662E8DB0DD9 /* Pods */,
+				D01380DF52A56A601B9405C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EAD2C60623E295E900398B39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C60523E295E900398B39 /* GitToday.app */,
+				EAD2C61B23E295ED00398B39 /* GitTodayTests.xctest */,
+				EAD2C62623E295EE00398B39 /* GitTodayUITests.xctest */,
+				EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAD2C60723E295E900398B39 /* GitToday */ = {
+			isa = PBXGroup;
+			children = (
+				EAC52E1724067A3300003112 /* Extensions */,
+				EAF232EE23E8FD1C008A455B /* Helper */,
+				EAD2C63D23E2964A00398B39 /* Repository */,
+				EAD2C63C23E2962C00398B39 /* Service */,
+				EAD2C63B23E2961400398B39 /* View */,
+				EAD2C63923E295FE00398B39 /* ViewModel */,
+				EAD2C63823E295F900398B39 /* Model */,
+				EAD2C60823E295E900398B39 /* AppDelegate.swift */,
+				EAD2C60A23E295E900398B39 /* SceneDelegate.swift */,
+				EAD2C60E23E295E900398B39 /* Main.storyboard */,
+				EAD2C61123E295ED00398B39 /* Assets.xcassets */,
+				EAD2C61323E295ED00398B39 /* LaunchScreen.storyboard */,
+				EAD2C61623E295ED00398B39 /* Info.plist */,
+			);
+			path = GitToday;
+			sourceTree = "<group>";
+		};
+		EAD2C61E23E295ED00398B39 /* GitTodayTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C61F23E295ED00398B39 /* GitTodayTests.swift */,
+				EAD2C62123E295ED00398B39 /* Info.plist */,
+			);
+			path = GitTodayTests;
+			sourceTree = "<group>";
+		};
+		EAD2C62923E295EE00398B39 /* GitTodayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C62A23E295EE00398B39 /* GitTodayUITests.swift */,
+				EAD2C62C23E295EE00398B39 /* Info.plist */,
+			);
+			path = GitTodayUITests;
+			sourceTree = "<group>";
+		};
+		EAD2C63823E295F900398B39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C64023E2969600398B39 /* Dot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EAD2C63923E295FE00398B39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EAF232F323E98100008A455B /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EAD2C63B23E2961400398B39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EAD2C63C23E2962C00398B39 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EA0C120623E8F60600BE20CF /* UserCase */,
+				EA0C120523E8F5FF00BE20CF /* API */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EAD2C63D23E2964A00398B39 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C63E23E2967600398B39 /* ContributionRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		EAD2C64B23E2AE5200398B39 /* GitToday Widget */ = {
+			isa = PBXGroup;
+			children = (
+				EAD2C64C23E2AE5200398B39 /* TodayViewController.swift */,
+				EAD2C64E23E2AE5200398B39 /* MainInterface.storyboard */,
+				EAD2C65123E2AE5200398B39 /* Info.plist */,
+				EAD2C65D23E3EE7700398B39 /* TodayViewModel.swift */,
+			);
+			path = "GitToday Widget";
+			sourceTree = "<group>";
+		};
+		EAF232EE23E8FD1C008A455B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */,
+				EAF232F123E8FD60008A455B /* GitTodayError.swift */,
+				EAC52E15240678B400003112 /* GitTodayAlertState.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAD2C60423E295E900398B39 /* GitToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAD2C62F23E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitToday" */;
+			buildPhases = (
+				2DDEE25A1901B285E34591A5 /* [CP] Check Pods Manifest.lock */,
+				EAD2C60123E295E900398B39 /* Sources */,
+				EAD2C60223E295E900398B39 /* Frameworks */,
+				EAD2C60323E295E900398B39 /* Resources */,
+				B126A7ABA76CA26235EA9D91 /* [CP] Embed Pods Frameworks */,
+				EAD2C65823E2AE5200398B39 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAD2C65323E2AE5200398B39 /* PBXTargetDependency */,
+			);
+			name = GitToday;
+			productName = GitToday;
+			productReference = EAD2C60523E295E900398B39 /* GitToday.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAD2C61A23E295ED00398B39 /* GitTodayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAD2C63223E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayTests" */;
+			buildPhases = (
+				BFF09CBDCB0A207E3C4C0BB3 /* [CP] Check Pods Manifest.lock */,
+				EAD2C61723E295ED00398B39 /* Sources */,
+				EAD2C61823E295ED00398B39 /* Frameworks */,
+				EAD2C61923E295ED00398B39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAD2C61D23E295ED00398B39 /* PBXTargetDependency */,
+			);
+			name = GitTodayTests;
+			productName = GitTodayTests;
+			productReference = EAD2C61B23E295ED00398B39 /* GitTodayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EAD2C62523E295EE00398B39 /* GitTodayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAD2C63523E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayUITests" */;
+			buildPhases = (
+				F91BBB6F8D049D56DFF4B034 /* [CP] Check Pods Manifest.lock */,
+				EAD2C62223E295EE00398B39 /* Sources */,
+				EAD2C62323E295EE00398B39 /* Frameworks */,
+				EAD2C62423E295EE00398B39 /* Resources */,
+				531AAE8C71E53F5379F81912 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAD2C62823E295EE00398B39 /* PBXTargetDependency */,
+			);
+			name = GitTodayUITests;
+			productName = GitTodayUITests;
+			productReference = EAD2C62623E295EE00398B39 /* GitTodayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EAD2C64723E2AE5200398B39 /* GitToday Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAD2C65523E2AE5200398B39 /* Build configuration list for PBXNativeTarget "GitToday Widget" */;
+			buildPhases = (
+				1DD344D1491378B3E73BE888 /* [CP] Check Pods Manifest.lock */,
+				EAD2C64423E2AE5200398B39 /* Sources */,
+				EAD2C64523E2AE5200398B39 /* Frameworks */,
+				EAD2C64623E2AE5200398B39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GitToday Widget";
+			productName = "GitToday Widget";
+			productReference = EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAD2C5FD23E295E900398B39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Mainea;
+				TargetAttributes = {
+					EAD2C60423E295E900398B39 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					EAD2C61A23E295ED00398B39 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = EAD2C60423E295E900398B39;
+					};
+					EAD2C62523E295EE00398B39 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = EAD2C60423E295E900398B39;
+					};
+					EAD2C64723E2AE5200398B39 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = EAD2C60023E295E900398B39 /* Build configuration list for PBXProject "GitToday" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAD2C5FC23E295E900398B39;
+			productRefGroup = EAD2C60623E295E900398B39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAD2C60423E295E900398B39 /* GitToday */,
+				EAD2C61A23E295ED00398B39 /* GitTodayTests */,
+				EAD2C62523E295EE00398B39 /* GitTodayUITests */,
+				EAD2C64723E2AE5200398B39 /* GitToday Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAD2C60323E295E900398B39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C61523E295ED00398B39 /* LaunchScreen.storyboard in Resources */,
+				EAD2C61223E295ED00398B39 /* Assets.xcassets in Resources */,
+				EAD2C61023E295E900398B39 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C61923E295ED00398B39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C62423E295EE00398B39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C64623E2AE5200398B39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C65023E2AE5200398B39 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DD344D1491378B3E73BE888 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitToday Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DDEE25A1901B285E34591A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitToday-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		531AAE8C71E53F5379F81912 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B126A7ABA76CA26235EA9D91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday/Pods-GitToday-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday/Pods-GitToday-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitToday/Pods-GitToday-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFF09CBDCB0A207E3C4C0BB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitTodayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F91BBB6F8D049D56DFF4B034 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitToday-GitTodayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAD2C60123E295E900398B39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF232F423E98100008A455B /* CalendarViewModel.swift in Sources */,
+				EAD2C63F23E2967600398B39 /* ContributionRepository.swift in Sources */,
+				EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */,
+				EA0C120823E8F65600BE20CF /* ContributionsUseCase.swift in Sources */,
+				EAD2C64323E296CF00398B39 /* ContributionAPI.swift in Sources */,
+				EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */,
+				EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */,
+				EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */,
+				EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */,
+				EAD2C64123E2969600398B39 /* Dot.swift in Sources */,
+				EAD2C65A23E2C19C00398B39 /* CalendarViewController.swift in Sources */,
+				EAD2C60B23E295E900398B39 /* SceneDelegate.swift in Sources */,
+				EAF232F023E8FD2E008A455B /* KeyIdentifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C61723E295ED00398B39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C62023E295ED00398B39 /* GitTodayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C62223E295EE00398B39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C62B23E295EE00398B39 /* GitTodayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAD2C64423E2AE5200398B39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAD2C65E23E3EE7700398B39 /* TodayViewModel.swift in Sources */,
+				EAD2C64D23E2AE5200398B39 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAD2C61D23E295ED00398B39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD2C60423E295E900398B39 /* GitToday */;
+			targetProxy = EAD2C61C23E295ED00398B39 /* PBXContainerItemProxy */;
+		};
+		EAD2C62823E295EE00398B39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD2C60423E295E900398B39 /* GitToday */;
+			targetProxy = EAD2C62723E295EE00398B39 /* PBXContainerItemProxy */;
+		};
+		EAD2C65323E2AE5200398B39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD2C64723E2AE5200398B39 /* GitToday Widget */;
+			targetProxy = EAD2C65223E2AE5200398B39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EAD2C60E23E295E900398B39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD2C60F23E295E900398B39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAD2C61323E295ED00398B39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD2C61423E295ED00398B39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EAD2C64E23E2AE5200398B39 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAD2C64F23E2AE5200398B39 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAD2C62D23E295EE00398B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAD2C62E23E295EE00398B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAD2C63023E295EE00398B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAD2C63123E295EE00398B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EAD2C63323E295EE00398B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitTodayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitTodayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitToday.app/GitToday";
+			};
+			name = Debug;
+		};
+		EAD2C63423E295EE00398B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitTodayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitTodayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitToday.app/GitToday";
+			};
+			name = Release;
+		};
+		EAD2C63623E295EE00398B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitTodayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitTodayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GitToday;
+			};
+			name = Debug;
+		};
+		EAD2C63723E295EE00398B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = GitTodayUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitTodayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GitToday;
+			};
+			name = Release;
+		};
+		EAD2C65623E2AE5200398B39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = "GitToday Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAD2C65723E2AE5200398B39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7AF2T5392;
+				INFOPLIST_FILE = "GitToday Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAD2C60023E295E900398B39 /* Build configuration list for PBXProject "GitToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2C62D23E295EE00398B39 /* Debug */,
+				EAD2C62E23E295EE00398B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAD2C62F23E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2C63023E295EE00398B39 /* Debug */,
+				EAD2C63123E295EE00398B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAD2C63223E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2C63323E295EE00398B39 /* Debug */,
+				EAD2C63423E295EE00398B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAD2C63523E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2C63623E295EE00398B39 /* Debug */,
+				EAD2C63723E295EE00398B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAD2C65523E2AE5200398B39 /* Build configuration list for PBXNativeTarget "GitToday Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAD2C65623E2AE5200398B39 /* Debug */,
+				EAD2C65723E2AE5200398B39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAD2C5FD23E295E900398B39 /* Project object */;
+}
