@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 // Fetch 눌렀을떄 주는 데이터 반영 -> fetch누르면 있던 없던 현재 있는 id 기준  데이터 반영
 // 앱 처음 켰을 때에 데이터 반영 -> 있던 없던 현재 있는 id 기준 데이터 반영
@@ -17,62 +19,55 @@ class CalendarViewModel: CalendarViewBindable {
     private let useCase: ContributionsUseCase = ContributionsUseCase()
     private let contributionsRepository: ContributionsRepository = ContributionsRepository.shared
     
-    var todayCount: Int {
-        return contributionsRepository.todayCount
-    }
+    var todayCount: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    var weekCount: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    var monthCount: BehaviorRelay<Int> = BehaviorRelay(value: 0)
     
-    var weekCount: Int {
-        return contributionsRepository.weekCount
-    }
+    var step1: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var step2: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var step3: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var step4: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var step5: BehaviorRelay<[String]> = BehaviorRelay(value: [])
     
-    var monthCount: Int {
-        return contributionsRepository.monthCount
+    init() {
         
-    }
-    
-    var step1: [String] {
-        return contributionsRepository.step1
-    }
-    
-    var step2: [String] {
-        return contributionsRepository.step2
-    }
-    
-    var step3: [String] {
-        return contributionsRepository.step3
-    }
-    
-    var step4: [String] {
-        return contributionsRepository.step4
-    }
-    
-    var step5: [String] {
-        return contributionsRepository.step5
+        
+        
     }
     
     func fetch() {
         useCase.fetchContributions() { error  in
+        self.todayCount.accept(self.contributionsRepository.todayCount)
+            self.weekCount.accept(self.contributionsRepository.weekCount)
+            self.monthCount.accept(self.contributionsRepository.monthCount)
+            self.step1.accept(self.contributionsRepository.step1)
+            self.step2.accept(self.contributionsRepository.step2)
+            self.step3.accept(self.contributionsRepository.step3)
+            self.step4.accept(self.contributionsRepository.step4)
+            self.step5.accept(self.contributionsRepository.step5)
+            
+            print("refetch")
+            // guard 문 활용 방안?
+            if error == GitTodayError.userIDLoadError {
+                
+            }
             print(error)
+            
         }
     }
     
     func fetchUpdate(id: String) {
         useCase.firstFetchContributions(id: id) { error in
             print(error)
+            self.todayCount.accept(self.contributionsRepository.todayCount)
+            self.weekCount.accept(self.contributionsRepository.weekCount)
+            self.monthCount.accept(self.contributionsRepository.monthCount)
+            self.step1.accept(self.contributionsRepository.step1)
+            self.step2.accept(self.contributionsRepository.step2)
+            self.step3.accept(self.contributionsRepository.step3)
+            self.step4.accept(self.contributionsRepository.step4)
+            self.step5.accept(self.contributionsRepository.step5)
+            
         }
     }
-    
-    func fetchVal() {
-        self.todayCount = contributionsRepository.todayCount
-        self.weekCount = contributionsRepository.weekCount
-        self.monthCount = contributionsRepository.monthCount
-        
-        self.step1 = contributionsRepository.step1
-        self.step2 = contributionsRepository.step2
-        self.step3 = contributionsRepository.step3
-        self.step4 = contributionsRepository.step4
-        self.step5 = contributionsRepository.step5
-    }
-    // view Model 에서 fetch usecase 해준 다음에, 페치가 된 컴플리션을 받는다면, repository에서 꺼내서 온다!!
-    // 그리고 그 꺼내서 온거를 그대로  view단에 전달해주면 된다.
 }

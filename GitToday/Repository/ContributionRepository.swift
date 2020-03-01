@@ -30,10 +30,6 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
         let today = dots?.filter{ $0.id == dots!.count - 1}
         today?.forEach{ todayCount = $0.count}
         
-//        didSet() {
-//            self.todayCount
-//        }
-        
         return todayCount
     }
     

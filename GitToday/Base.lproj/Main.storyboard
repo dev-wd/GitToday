@@ -125,9 +125,6 @@
                                         <rect key="frame" x="331.33333333333331" y="0.0" width="82.666666666666686" height="53.666666666666664"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="repeat" catalog="system"/>
-                                        <connections>
-                                            <action selector="updateButtonTapped:" destination="np8-cE-tgG" eventType="touchUpInside" id="YAD-Ld-HP1"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -223,6 +220,7 @@
                         <outlet property="monthNumber" destination="7c4-nT-0ol" id="D1U-bG-Kdx"/>
                         <outlet property="notificationTime" destination="Zpn-vC-chb" id="PvE-iK-WJ8"/>
                         <outlet property="todayNumber" destination="X0n-lg-ejz" id="775-7M-4iY"/>
+                        <outlet property="updateButton" destination="sYN-yF-DrT" id="qJD-TG-208"/>
                         <outlet property="weekNumber" destination="WBY-DR-ZNj" id="typ-b1-R1R"/>
                     </connections>
                 </viewController>

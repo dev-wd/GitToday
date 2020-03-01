@@ -8,6 +8,8 @@ target 'GitToday' do
   # Pods for GitToday
   pod 'SwiftSoup'
   pod 'FSCalendar'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   target 'GitTodayTests' do
     inherit! :search_paths
     # Pods for testing

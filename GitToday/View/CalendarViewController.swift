@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import FSCalendar
 import UserNotifications
 
@@ -14,22 +16,19 @@ protocol CalendarViewBindable {
     func fetch()
     func fetchUpdate(id: String)
     
-    var todayCount: Int { set get }
-    var weekCount: Int { set get }
-    var monthCount: Int { set get }
+    var todayCount: BehaviorRelay<Int> { get }
+    var weekCount: BehaviorRelay<Int> { get }
+    var monthCount: BehaviorRelay<Int> { get }
     
-    var step1: [String] { set get }
-    var step2: [String] { set get }
-    var step3: [String] { set get}
-    var step4: [String] { set get }
-    var step5: [String] { set get }
-    
+    var step1: BehaviorRelay<[String]> { get }
+    var step2: BehaviorRelay<[String]> { get }
+    var step3: BehaviorRelay<[String]> { get }
+    var step4: BehaviorRelay<[String]> { get }
+    var step5: BehaviorRelay<[String]> { get }
 }
 
 
 class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance  {
-    
-    private let viewModel: CalendarViewBindable = CalendarViewModel()
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var idButtonTitle: UIButton!
@@ -38,23 +37,79 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var monthNumber: UILabel!
     @IBOutlet weak var notificationTime: UILabel!
     
+    @IBOutlet weak var updateButton: UIButton!
+    
+    var step1: [String] = []
+    var step2: [String] = []
+    var step3: [String] = []
+    var step4: [String] = []
+    var step5: [String] = []
+    
+    
+    var bag = DisposeBag()
+    
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchUpdate(id: "dev-wd")
-        layout()
+        bind(viewModel: CalendarViewModel())
         calenderLayout()
-        
     }
     
-    private func layout() {
-        todayNumber.text = String(viewModel.todayCount)
-        monthNumber.text = String(viewModel.monthCount)
-        weekNumber.text = String(viewModel.weekCount)
+    private func bind(viewModel:  CalendarViewBindable) {
+        viewModel.fetchUpdate(id: "dev-wd")
+        print("fetch")
+        
+        viewModel.todayCount.subscribe({
+            val in
+            self.todayNumber.text = String(val.element!)
+        }).disposed(by: bag)
+        
+        viewModel.weekCount.subscribe({
+            val in
+            self.weekNumber.text = String(val.element!)
+        }).disposed(by: bag)
+        
+        viewModel.monthCount.subscribe({
+            val in
+            self.monthNumber.text = String(val.element!)
+        }).disposed(by: bag)
+        
+        viewModel.step1.subscribe({
+            val in
+            self.step1 = val.element!
+        }).disposed(by: bag)
+        
+        viewModel.step2.subscribe({
+            val in
+            self.step2 = val.element!
+        }).disposed(by: bag)
+        
+        viewModel.step3.subscribe({
+            val in
+            self.step3 = val.element!
+        }).disposed(by: bag)
+        
+        viewModel.step4.subscribe({
+            val in
+            self.step4 = val.element!
+        }).disposed(by: bag)
+        
+        viewModel.step5.subscribe({
+            val in
+            self.step5 = val.element!
+        }).disposed(by: bag)
+        
+        updateButton.rx.tap.subscribe(onNext:{
+            viewModel.fetch()
+        }).disposed(by: bag)
+        
+        idButtonTitle.rx.tap.subscribe(onNext:{
+            // alert for id change 를 띄워야 한다.
+        }).disposed(by: bag)
+        
     }
     
     
@@ -79,13 +134,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     func calendar(_ _calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         let dateString : String = dateFormatter.string(from:date)
-        if viewModel.step2.contains(dateString) {
+        
+        if self.step2.contains(dateString) {
             return UIColor.init(hex: 0xc6e48b)
-        }else if viewModel.step3.contains(dateString) {
+        }else if self.step3.contains(dateString) {
             return UIColor.init(hex: 0x7bc96f)
-        }else if viewModel.step4.contains(dateString) {
+        }else if self.step4.contains(dateString) {
             return UIColor.init(hex: 0x239a3b)
-        }else if viewModel.step5.contains(dateString) {
+        }else if self.step5.contains(dateString) {
             return UIColor.init(hex: 0x196127)
         }
         else{
@@ -102,10 +158,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return dateFormatter.date(from: dateFormatter.string(from: Date(timeIntervalSinceNow:-32140800)))!
     }
     
-    @IBAction func updateButtonTapped(_ sender: Any) {
-        viewModel.fetch()
-        print("fetch")
-    }
+    
     
     @IBAction func prevMonthTapped(_ sender: Any) {
         self.moveCurrentPage(moveUp: false)
@@ -123,7 +176,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
 }
-
 
 
 // alarm logic

@@ -22,21 +22,25 @@ class ContributionsUseCase {
 extension ContributionsUseCase: FetchContributionsUseCaseProtocol {
     func firstFetchContributions(id: String, completion: @escaping (GitTodayError?) -> Void) {
         userIDAPI.save(id, of: .id)
-        completion(GitTodayError.userIDLoadError)
-        
         contributionsRepository.fetchRepository(id: id) { error  in
             completion(error)
         }
+        
+        //completion(GitTodayError.userIDLoadError)
+        
+        
     }
     
     func fetchContributions(completion: @escaping (GitTodayError?) -> Void) {
         let id: String? = userIDAPI.load(of: .id)
+        
         guard id != nil else {
             completion(GitTodayError.userIDLoadError)
             return
             // 여기 주의해보자
         }
         contributionsRepository.fetchRepository(id: id!) { error  in
+            
             completion(error)
         }
     }
