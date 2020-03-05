@@ -10,14 +10,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// Fetch 눌렀을떄 주는 데이터 반영 -> fetch누르면 있던 없던 현재 있는 id 기준  데이터 반영
-// 앱 처음 켰을 때에 데이터 반영 -> 있던 없던 현재 있는 id 기준 데이터 반영
-// Id 새로 셋 해주면 데이터반영 -> 아이디 셋 해주고 따로 해주는 걸로 가야지
-
 class CalendarViewModel: CalendarViewBindable {
     
     private let useCase: ContributionsUseCase = ContributionsUseCase()
     private let contributionsRepository: ContributionsRepository = ContributionsRepository.shared
+    
+    
+    var isLoading: PublishRelay<Bool>
+    var responseStatus: PublishRelay<ResponseStatus>
+    var doneButtonValidation: BehaviorRelay<Bool>
     
     var todayCount: BehaviorRelay<Int> = BehaviorRelay(value: 0)
     var weekCount: BehaviorRelay<Int> = BehaviorRelay(value: 0)
@@ -30,35 +31,21 @@ class CalendarViewModel: CalendarViewBindable {
     var step5: BehaviorRelay<[String]> = BehaviorRelay(value: [])
     
     init() {
-        
-        
-        
+        isLoading = PublishRelay.init()
+        responseStatus = PublishRelay.init()
+        doneButtonValidation = BehaviorRelay(value: true)
     }
     
     func fetch() {
+        isLoading.accept(true)
         useCase.fetchContributions() { error  in
-        self.todayCount.accept(self.contributionsRepository.todayCount)
-            self.weekCount.accept(self.contributionsRepository.weekCount)
-            self.monthCount.accept(self.contributionsRepository.monthCount)
-            self.step1.accept(self.contributionsRepository.step1)
-            self.step2.accept(self.contributionsRepository.step2)
-            self.step3.accept(self.contributionsRepository.step3)
-            self.step4.accept(self.contributionsRepository.step4)
-            self.step5.accept(self.contributionsRepository.step5)
-            
             print("refetch")
-            // guard 문 활용 방안?
-            if error == GitTodayError.userIDLoadError {
-                
+            guard error == GitTodayError.userIDLoadError else {
+                self.isLoading.accept(false)
+                self.responseStatus.accept(.failed(error!))
+                print("GitTodayError.userIDLoadError")
+                return
             }
-            print(error)
-            
-        }
-    }
-    
-    func fetchUpdate(id: String) {
-        useCase.firstFetchContributions(id: id) { error in
-            print(error)
             self.todayCount.accept(self.contributionsRepository.todayCount)
             self.weekCount.accept(self.contributionsRepository.weekCount)
             self.monthCount.accept(self.contributionsRepository.monthCount)
@@ -67,7 +54,39 @@ class CalendarViewModel: CalendarViewBindable {
             self.step3.accept(self.contributionsRepository.step3)
             self.step4.accept(self.contributionsRepository.step4)
             self.step5.accept(self.contributionsRepository.step5)
+            self.isLoading.accept(false)
+            self.responseStatus.accept(.success)
+        }
+    }
+    
+    func fetchUpdate(id: String) {
+        guard id == "" else {
+            self.responseStatus.accept(.failed(GitTodayError.userIDDidNotInputError))
+            return
+        }
+        
+        isLoading.accept(true)
+        useCase.firstFetchContributions(id: id) { error in
+            print("first fetch")
+            guard error == GitTodayError.userIDSaveError else {
+                self.isLoading.accept(false)
+                self.responseStatus.accept(.failed(error!))
+                print("GitTodayError.userIDSaveError")
+                return
+            }
             
+            self.todayCount.accept(self.contributionsRepository.todayCount)
+            self.weekCount.accept(self.contributionsRepository.weekCount)
+            self.monthCount.accept(self.contributionsRepository.monthCount)
+            
+            self.step1.accept(self.contributionsRepository.step1)
+            self.step2.accept(self.contributionsRepository.step2)
+            self.step3.accept(self.contributionsRepository.step3)
+            self.step4.accept(self.contributionsRepository.step4)
+            self.step5.accept(self.contributionsRepository.step5)
+            
+            self.isLoading.accept(false)
+            self.responseStatus.accept(.success)
         }
     }
 }

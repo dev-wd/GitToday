@@ -8,12 +8,13 @@
 
 import UIKit
 
-enum GitTodayAlertState {
-    case register(Bool, String, (UIAlertAction) -> Void)
-    case unauthorized
-    case registerFailed
-    case removeNotification(((UIAlertAction)-> Void)?)
-    
+//enum GitTodayAlertState {
+//    case register(Bool, String, (UIAlertAction) -> Void)
+//    case unauthorized
+//    case registerFailed
+//    case removeNotification(((UIAlertAction)-> V
+//        oid)?)
+//
 //    var alert: UIAlertController {
 //        switch self {
 //        case .register(let hasScheduledNotification, let time, let handler):
@@ -24,4 +25,4 @@ enum GitTodayAlertState {
 //            return UIAlertController.getA
 //        }
 //    }
-}
+//}

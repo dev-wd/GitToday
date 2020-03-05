@@ -11,10 +11,13 @@ import RxSwift
 import RxCocoa
 import FSCalendar
 import UserNotifications
+import JGProgressHUD
 
 protocol CalendarViewBindable {
-    func fetch()
-    func fetchUpdate(id: String)
+    
+    var isLoading: PublishRelay<Bool> { get }
+    var responseStatus: PublishRelay<ResponseStatus> { get }
+    var doneButtonValidation: BehaviorRelay<Bool> { get }
     
     var todayCount: BehaviorRelay<Int> { get }
     var weekCount: BehaviorRelay<Int> { get }
@@ -25,6 +28,9 @@ protocol CalendarViewBindable {
     var step3: BehaviorRelay<[String]> { get }
     var step4: BehaviorRelay<[String]> { get }
     var step5: BehaviorRelay<[String]> { get }
+    
+    func fetch()
+    func fetchUpdate(id: String)
 }
 
 
@@ -35,8 +41,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var todayNumber: UILabel!
     @IBOutlet weak var weekNumber: UILabel!
     @IBOutlet weak var monthNumber: UILabel!
-    @IBOutlet weak var notificationTime: UILabel!
     
+    @IBOutlet weak var alarmButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
     
     var step1: [String] = []
@@ -45,13 +51,22 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     var step4: [String] = []
     var step5: [String] = []
     
-    
     var bag = DisposeBag()
     
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
+    private let gregorian: Calendar = Calendar(identifier: .gregorian)
+    private var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+    private let hud = JGProgressHUD(style: .dark)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(viewModel: CalendarViewModel())
@@ -59,57 +74,99 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     private func bind(viewModel:  CalendarViewBindable) {
-        viewModel.fetchUpdate(id: "dev-wd")
+        viewModel.fetch()
         print("fetch")
         
-        viewModel.todayCount.subscribe({
-            val in
-            self.todayNumber.text = String(val.element!)
-        }).disposed(by: bag)
+        viewModel.todayCount
+            .subscribe({ val in
+                self.todayNumber.text = String(val.element!)
+            }).disposed(by: bag)
         
-        viewModel.weekCount.subscribe({
-            val in
-            self.weekNumber.text = String(val.element!)
-        }).disposed(by: bag)
+        viewModel.weekCount
+            .subscribe({ val in
+                self.weekNumber.text = String(val.element!)
+            }).disposed(by: bag)
         
-        viewModel.monthCount.subscribe({
-            val in
-            self.monthNumber.text = String(val.element!)
-        }).disposed(by: bag)
+        viewModel.monthCount
+            .subscribe({ val in
+                self.monthNumber.text = String(val.element!)
+            }).disposed(by: bag)
         
-        viewModel.step1.subscribe({
-            val in
-            self.step1 = val.element!
-        }).disposed(by: bag)
+        viewModel.step1
+            .subscribe({ val in
+                self.step1 = val.element!
+            }).disposed(by: bag)
         
-        viewModel.step2.subscribe({
-            val in
-            self.step2 = val.element!
-        }).disposed(by: bag)
+        viewModel.step2
+            .subscribe({ val in
+                self.step2 = val.element!
+            }).disposed(by: bag)
         
-        viewModel.step3.subscribe({
-            val in
-            self.step3 = val.element!
-        }).disposed(by: bag)
+        viewModel.step3
+            .subscribe({ val in
+                self.step3 = val.element!
+            }).disposed(by: bag)
         
-        viewModel.step4.subscribe({
-            val in
-            self.step4 = val.element!
-        }).disposed(by: bag)
+        viewModel.step4
+            .subscribe({ val in
+                self.step4 = val.element!
+            }).disposed(by: bag)
         
-        viewModel.step5.subscribe({
-            val in
-            self.step5 = val.element!
-        }).disposed(by: bag)
+        viewModel.step5
+            .subscribe({ val in
+                self.step5 = val.element!
+            }).disposed(by: bag)
+        
+        viewModel.isLoading
+            .subscribe(onNext: { val in
+                if val == false {
+                    self.hud.textLabel.text = "Success"
+                    self.hud.detailTextLabel.text = nil
+                    self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                    self.hud.dismiss()
+                } else {
+                    self.hud.show(in: self.view)
+                    self.hud.textLabel.text = "Loadding"
+                    self.hud.indicatorView = JGProgressHUDIndicatorView()
+                }
+            }).disposed(by: bag)
+        
+        // error 종류에 따라 다르게 딜링해줘야지
+        viewModel.responseStatus
+            .subscribe(onNext: {val in
+                switch val {
+                case .success:
+                    print("succ")
+                case .failed(GitTodayError.userIDLoadError):
+                    print("fail")
+                case .failed(GitTodayError.userIDSaveError):
+                    print("fail")
+                case .failed(GitTodayError.networkError):
+                    print("fail")
+                case .failed(_):
+                    print("fail")
+                }
+            }).disposed(by: bag)
         
         updateButton.rx.tap.subscribe(onNext:{
             viewModel.fetch()
         }).disposed(by: bag)
         
         idButtonTitle.rx.tap.subscribe(onNext:{
-            // alert for id change 를 띄워야 한다.
+            let alert = UIAlertController(title: "GitHub ID", message: "", preferredStyle: UIAlertController.Style.alert)
+            let done = UIAlertAction(title:"Done", style: .default) { (action) in
+                viewModel.fetchUpdate(id: (alert.textFields?[0].text!)!)
+            }
+            let cancel = UIAlertAction(title:"Cancel", style: .cancel)
+            
+            alert.addTextField() { textField in
+                textField.placeholder = "input your GitHub ID"
+            }
+            alert.addAction(cancel)
+            alert.addAction(done)
+            self.present(alert, animated: true, completion: nil)
+            // 이런게 문제.. bind 시켜 놓으면 dependency가 있으니까 !!!!
         }).disposed(by: bag)
-        
     }
     
     
@@ -123,14 +180,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.borderSelectionColor = UIColor.red
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
     }
-    
-    private let gregorian: Calendar = Calendar(identifier: .gregorian)
-    private var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-    
+}
+
+extension CalendarViewController {
     
     func calendar(_ _calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         let dateString : String = dateFormatter.string(from:date)
@@ -176,8 +228,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
 }
-
-
 // alarm logic
 
 //let center = UNUserNotificationCenter.current()

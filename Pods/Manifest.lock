@@ -1,15 +1,17 @@
 PODS:
   - FSCalendar (2.8.1)
-  - RxCocoa (5.0.1):
+  - JGProgressHUD (2.1)
+  - RxCocoa (5.1.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.0):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.0)
   - SwiftSoup (2.3.0)
 
 DEPENDENCIES:
   - FSCalendar
+  - JGProgressHUD
   - RxCocoa
   - RxSwift
   - SwiftSoup
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FSCalendar
+    - JGProgressHUD
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
+  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SwiftSoup: d78683f7ea0ae5733225a9e1d3bee5b256449df4
 
-PODFILE CHECKSUM: d97c4271efc3ae60c7b252964bccf2a9df3c8a58
+PODFILE CHECKSUM: a366ff852bce808d4e8cd1f5e568939b85a863b8
 
 COCOAPODS: 1.8.4

@@ -12,6 +12,7 @@
 		650558DCE5F044CC8EBC37AA /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */; };
 		72B1C9B6FF0A5AC84ABDBFEE /* Pods_GitToday_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */; };
 		EA0C120823E8F65600BE20CF /* ContributionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */; };
+		EA123EAE240F65C9007E0397 /* IDInputAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */; };
 		EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E15240678B400003112 /* GitTodayAlertState.swift */; };
 		EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E1824067A5000003112 /* UIColorExtensions.swift */; };
 		EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C60823E295E900398B39 /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitTodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsUseCase.swift; sourceTree = "<group>"; };
+		EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputAlertViewController.swift; sourceTree = "<group>"; };
 		EAC52E15240678B400003112 /* GitTodayAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayAlertState.swift; sourceTree = "<group>"; };
 		EAC52E1824067A5000003112 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		EAD2C60523E295E900398B39 /* GitToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */,
+				EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */,
 				EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */,
 				EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */,
+				EA123EAE240F65C9007E0397 /* IDInputAlertViewController.swift in Sources */,
 				EAD82B53240B7395007EF25D /* IDInputAlertViewModel.swift in Sources */,
 				EAD2C64123E2969600398B39 /* Dot.swift in Sources */,
 				EAD2C65A23E2C19C00398B39 /* CalendarViewController.swift in Sources */,

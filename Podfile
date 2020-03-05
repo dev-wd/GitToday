@@ -10,6 +10,7 @@ target 'GitToday' do
   pod 'FSCalendar'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'JGProgressHUD'
   target 'GitTodayTests' do
     inherit! :search_paths
     # Pods for testing

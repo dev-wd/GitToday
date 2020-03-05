@@ -159,21 +159,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpn-vC-chb">
-                                        <rect key="frame" x="230.66666666666663" y="96.666666666666629" width="118" height="53"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yms-4N-yDG">
+                                        <rect key="frame" x="186.33333333333337" y="100.66666666666663" width="165.66666666666663" height="67.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14404351077697891" green="0.14879441624365486" blue="0.14742418941424432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Zpn-vC-chb" firstAttribute="width" secondItem="eeT-V7-DBw" secondAttribute="width" multiplier="0.285024" id="2Ba-Jj-M7R"/>
-                                    <constraint firstItem="Zpn-vC-chb" firstAttribute="centerX" secondItem="eeT-V7-DBw" secondAttribute="centerX" multiplier="1.4" id="5CU-43-pR8"/>
                                     <constraint firstItem="8Ef-3g-nSr" firstAttribute="width" secondItem="eeT-V7-DBw" secondAttribute="width" multiplier="0.111111" id="AwO-vt-oCU"/>
-                                    <constraint firstItem="Zpn-vC-chb" firstAttribute="height" secondItem="eeT-V7-DBw" secondAttribute="height" multiplier="0.236607" id="EtD-w3-LXy"/>
                                     <constraint firstItem="YC7-DS-fid" firstAttribute="width" secondItem="eeT-V7-DBw" secondAttribute="width" multiplier="0.289855" id="GgB-m3-wDq"/>
-                                    <constraint firstItem="Zpn-vC-chb" firstAttribute="centerY" secondItem="eeT-V7-DBw" secondAttribute="centerY" multiplier="1.1" id="Iza-jM-u8g"/>
+                                    <constraint firstItem="Yms-4N-yDG" firstAttribute="centerX" secondItem="eeT-V7-DBw" secondAttribute="centerX" multiplier="1.3" id="Gmr-F5-3QI"/>
                                     <constraint firstItem="wTr-D1-yTD" firstAttribute="width" secondItem="eeT-V7-DBw" secondAttribute="width" multiplier="0.11" id="Mnx-bR-Iyr"/>
                                     <constraint firstItem="8Ef-3g-nSr" firstAttribute="centerY" secondItem="eeT-V7-DBw" secondAttribute="centerY" multiplier="1.2" id="R2F-37-Gvy"/>
                                     <constraint firstItem="wTr-D1-yTD" firstAttribute="centerX" secondItem="eeT-V7-DBw" secondAttribute="centerX" multiplier="0.4" id="Ztf-RP-BKs"/>
@@ -183,7 +178,10 @@
                                     <constraint firstItem="YC7-DS-fid" firstAttribute="centerX" secondItem="eeT-V7-DBw" secondAttribute="centerX" multiplier="1.4" id="ncC-B6-0DW"/>
                                     <constraint firstItem="wTr-D1-yTD" firstAttribute="height" secondItem="eeT-V7-DBw" secondAttribute="height" multiplier="0.18" id="pQW-dt-5bZ"/>
                                     <constraint firstItem="8Ef-3g-nSr" firstAttribute="centerX" secondItem="eeT-V7-DBw" secondAttribute="centerX" multiplier="0.4" id="qjD-5o-VCT"/>
+                                    <constraint firstItem="Yms-4N-yDG" firstAttribute="centerY" secondItem="eeT-V7-DBw" secondAttribute="centerY" multiplier="1.2" id="whx-Dd-MPo"/>
+                                    <constraint firstItem="Yms-4N-yDG" firstAttribute="width" secondItem="eeT-V7-DBw" secondAttribute="width" multiplier="0.4" id="y7z-jD-gfY"/>
                                     <constraint firstItem="8Ef-3g-nSr" firstAttribute="height" secondItem="eeT-V7-DBw" secondAttribute="height" multiplier="0.18" id="yai-3B-LPR"/>
+                                    <constraint firstItem="Yms-4N-yDG" firstAttribute="height" secondItem="eeT-V7-DBw" secondAttribute="height" multiplier="0.3" id="z2v-nE-jxD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -215,10 +213,10 @@
                         <viewLayoutGuide key="safeArea" id="YPh-Iw-hYB"/>
                     </view>
                     <connections>
+                        <outlet property="alarmButton" destination="Yms-4N-yDG" id="def-5J-yXw"/>
                         <outlet property="calendar" destination="Gn6-G1-V8t" id="ba9-Wo-GAU"/>
                         <outlet property="idButtonTitle" destination="hMG-T0-dEX" id="Ur1-9r-gtd"/>
                         <outlet property="monthNumber" destination="7c4-nT-0ol" id="D1U-bG-Kdx"/>
-                        <outlet property="notificationTime" destination="Zpn-vC-chb" id="PvE-iK-WJ8"/>
                         <outlet property="todayNumber" destination="X0n-lg-ejz" id="775-7M-4iY"/>
                         <outlet property="updateButton" destination="sYN-yF-DrT" id="qJD-TG-208"/>
                         <outlet property="weekNumber" destination="WBY-DR-ZNj" id="typ-b1-R1R"/>
@@ -227,6 +225,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HH-1Q-20g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oVr-eU-Rbx">
+            <objects>
+                <viewController id="CXz-Ye-Fk3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0C5-Yu-vtc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjS-kT-jH8">
+                                <rect key="frame" x="82.666666666666671" y="380.66666666666669" width="248.66666666666663" height="134.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wjS-kT-jH8" firstAttribute="height" secondItem="0C5-Yu-vtc" secondAttribute="height" multiplier="0.15" id="1F6-R6-Z6d"/>
+                            <constraint firstItem="wjS-kT-jH8" firstAttribute="centerY" secondItem="0C5-Yu-vtc" secondAttribute="centerY" id="gg6-dL-abH"/>
+                            <constraint firstItem="wjS-kT-jH8" firstAttribute="centerX" secondItem="0C5-Yu-vtc" secondAttribute="centerX" id="uI1-bJ-3cj"/>
+                            <constraint firstItem="wjS-kT-jH8" firstAttribute="width" secondItem="0C5-Yu-vtc" secondAttribute="width" multiplier="0.6" id="xpH-nV-StX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GJH-xw-OOs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGz-kr-nQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="138"/>
         </scene>
     </scenes>
     <resources>

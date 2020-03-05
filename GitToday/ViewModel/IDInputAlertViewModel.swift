@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import JGProgressHUD
 
 enum ResponseStatus {
     case success
@@ -36,15 +37,13 @@ class IDInputAlertViewModel: IDInputAlertViewBindable {
     init() {
         input = BehaviorRelay(value: "")
         isLoading = PublishRelay.init()
-        ResponseStatus = PublishRelay.init()
+        responseStatus = PublishRelay.init()
         doneButtonValidation = BehaviorRelay(value: true)
     }
     func fetch() {
         isLoading.accept(true)
         let id = input.value
         useCase.firstFetchContributions(id: id) { error in
-            
-            
             if error == GitTodayError.userIDLoadError {
                 
             }

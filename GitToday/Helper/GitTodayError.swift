@@ -13,4 +13,5 @@ enum GitTodayError: Error {
     case networkError
     case userIDLoadError
     case userIDSaveError
+    case userIDDidNotInputError
 }
