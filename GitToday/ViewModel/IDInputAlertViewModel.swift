@@ -11,10 +11,6 @@ import RxSwift
 import RxCocoa
 import JGProgressHUD
 
-enum ResponseStatus {
-    case success
-    case failed(Error)
-}
 
 protocol IDInputAlertViewBindable {
     var input: BehaviorRelay<String> { get }

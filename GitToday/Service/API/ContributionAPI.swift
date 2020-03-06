@@ -18,7 +18,6 @@ class ContributionAPI : ContributionAPIProtocol {
     
     func fetchDots(id: String, completion: @escaping ([Dot]?, GitTodayError?)-> Void) {
         var dots : [Dot] = []
-        
         if let url = URL(string: "https://github.com/users/"+id+"/contributions") {
             do {
                 let contents = try String(contentsOf: url)

@@ -15,7 +15,7 @@ protocol UserDefaultAPIProtocol {
 }
 
 class UserIDAPI: UserDefaultAPIProtocol {
-    private var userDefaults = UserDefaults(suiteName: "GitTodayID")
+    private var userDefaults = UserDefaults(suiteName: "group.GitToday")
     
     func save<T>(_ data: T, of type: KeyIdentifier) {
         userDefaults?.set(data, forKey: type.value)

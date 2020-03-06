@@ -14,7 +14,7 @@ import UserNotifications
 import JGProgressHUD
 
 protocol CalendarViewBindable {
-    
+    var id: BehaviorRelay<String> { get }
     var isLoading: PublishRelay<Bool> { get }
     var responseStatus: PublishRelay<ResponseStatus> { get }
     var doneButtonValidation: BehaviorRelay<Bool> { get }
@@ -57,6 +57,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     private lazy var today: Date = {
         return Date()
     }()
+    
     private let gregorian: Calendar = Calendar(identifier: .gregorian)
     private var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -64,7 +65,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return formatter
     }()
     
-    private let hud = JGProgressHUD(style: .dark)
+    private let loadingHud = JGProgressHUD(style: .dark)
+    private let resultHud = JGProgressHUD(style: .dark)
     
     
     override func viewDidLoad() {
@@ -76,6 +78,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     private func bind(viewModel:  CalendarViewBindable) {
         viewModel.fetch()
         print("fetch")
+        viewModel.id
+            .subscribe({ val in
+                self.idButtonTitle.titleLabel?.text = String(val.element!)
+            }).disposed(by: bag)
         
         viewModel.todayCount
             .subscribe({ val in
@@ -120,32 +126,34 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         viewModel.isLoading
             .subscribe(onNext: { val in
                 if val == false {
-                    self.hud.textLabel.text = "Success"
-                    self.hud.detailTextLabel.text = nil
-                    self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-                    self.hud.dismiss()
+                    self.loadingHud.dismiss()
                 } else {
-                    self.hud.show(in: self.view)
-                    self.hud.textLabel.text = "Loadding"
-                    self.hud.indicatorView = JGProgressHUDIndicatorView()
+                    self.loadingHud.show(in: self.view)
+                    self.loadingHud.textLabel.text = "Loadding"
+                    self.loadingHud.indicatorView = JGProgressHUDIndicatorView()
                 }
             }).disposed(by: bag)
         
-        // error 종류에 따라 다르게 딜링해줘야지
         viewModel.responseStatus
             .subscribe(onNext: {val in
+                self.resultHud.indicatorView = JGProgressHUDErrorIndicatorView()
                 switch val {
                 case .success:
-                    print("succ")
+                    self.resultHud.textLabel.text = "Success"
+                    self.resultHud.indicatorView = JGProgressHUDSuccessIndicatorView()
                 case .failed(GitTodayError.userIDLoadError):
-                    print("fail")
+                    self.resultHud.textLabel.text = "userIDLoadError"
                 case .failed(GitTodayError.userIDSaveError):
-                    print("fail")
+                    self.resultHud.textLabel.text = "userIDSaveError"
                 case .failed(GitTodayError.networkError):
-                    print("fail")
+                    self.resultHud.textLabel.text = "networkError"
+                case .failed(GitTodayError.userIDDidNotInputError):
+                    self.resultHud.textLabel.text = "userIDDidNotInputError"
                 case .failed(_):
-                    print("fail")
+                    self.resultHud.textLabel.text = "unknownError"
                 }
+                self.resultHud.show(in: self.view)
+                self.resultHud.dismiss(afterDelay: 0.3)
             }).disposed(by: bag)
         
         updateButton.rx.tap.subscribe(onNext:{
@@ -165,7 +173,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             alert.addAction(cancel)
             alert.addAction(done)
             self.present(alert, animated: true, completion: nil)
-            // 이런게 문제.. bind 시켜 놓으면 dependency가 있으니까 !!!!
         }).disposed(by: bag)
     }
     
@@ -209,8 +216,6 @@ extension CalendarViewController {
     func minimumDate(for calendar: FSCalendar) -> Date {
         return dateFormatter.date(from: dateFormatter.string(from: Date(timeIntervalSinceNow:-32140800)))!
     }
-    
-    
     
     @IBAction func prevMonthTapped(_ sender: Any) {
         self.moveCurrentPage(moveUp: false)

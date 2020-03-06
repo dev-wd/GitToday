@@ -16,6 +16,8 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
     private let api: ContributionAPIProtocol = ContributionAPI()
     static let shared = ContributionsRepository()
     var dots: [Dot]? = []
+    var id: String? = ""
+    
     let formatter = DateFormatter()
     let todayDate: String?
     private init() {
@@ -23,7 +25,6 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
         formatter.dateFormat = "yyyy/MM/dd"
         todayDate = formatter.string(from: now)
     }
-    
     
     var todayCount: Int {
         var todayCount = 0
@@ -46,8 +47,6 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
         month?.forEach{ monthCount += $0.count }
         return monthCount
     }
-    
-    // not yet 어떻게 처리할지 고민해야 한다.
     
     var step1: [String] {
         let step1Color: String = "#ebedf0"
@@ -100,4 +99,5 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
             }
         }
     }
+    
 }
