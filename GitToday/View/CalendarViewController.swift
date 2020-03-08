@@ -51,6 +51,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     var step4: [String] = []
     var step5: [String] = []
     
+    var standardMon: Int = 12
+    
     var bag = DisposeBag()
     
     private var currentPage: Date?
@@ -127,6 +129,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             .subscribe(onNext: { val in
                 if val == false {
                     self.loadingHud.dismiss()
+                    
                 } else {
                     self.loadingHud.show(in: self.view)
                     self.loadingHud.textLabel.text = "Loadding"
@@ -152,6 +155,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                 case .failed(_):
                     self.resultHud.textLabel.text = "unknownError"
                 }
+                
                 self.resultHud.show(in: self.view)
                 self.resultHud.dismiss(afterDelay: 0.3)
             }).disposed(by: bag)
@@ -186,6 +190,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.titleSelectionColor = UIColor.black
         calendar.appearance.borderSelectionColor = UIColor.red
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
+        
     }
 }
 
@@ -227,10 +232,18 @@ extension CalendarViewController {
     private func moveCurrentPage(moveUp: Bool) {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-        dateComponents.month = moveUp ? 1 : -1
         
+        
+        
+        
+        if !(standardMon >= 12 && moveUp == true) && !(standardMon <= 0 && moveUp == false) {
+            standardMon +=  moveUp ? 1 : -1
+            dateComponents.month = moveUp ? 1 : -1
+        }
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
+        
+        
     }
 }
 // alarm logic

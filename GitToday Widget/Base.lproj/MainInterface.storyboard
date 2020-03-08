@@ -21,17 +21,29 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="lua-ZU-Bgr"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.32041025719999999" green="0.80311625529999997" blue="0.65443373979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.32041025719999999" green="0.80311625529999997" blue="0.65443373979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIB-Ki-uQ2">
                                 <rect key="frame" x="13" y="6" width="38" height="30"/>
-                                <state key="normal" title="PREV"/>
+                                <state key="normal" title="PREV">
+                                    <color key="titleColor" red="0.23858278150000001" green="0.60814084290000003" blue="0.49819535910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="prevButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Ehu-fw-PcN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrF-s5-hhJ">
                                 <rect key="frame" x="267" y="6" width="42" height="30"/>
-                                <state key="normal" title="NEXT"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.23858278150000001" green="0.60814084290000003" blue="0.49819535910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="bZ2-lN-fFc"/>
                                 </connections>

@@ -28,6 +28,7 @@ protocol TodayViewBindable {
     var step4: BehaviorRelay<[String]> { get }
     var step5: BehaviorRelay<[String]> { get }
     
+    
     func fetch()
 }
 class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
@@ -39,6 +40,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
     var step3: [String] = []
     var step4: [String] = []
     var step5: [String] = []
+    
+    var standardMon: Int = 12
     
     var bag = DisposeBag()
     
@@ -84,7 +87,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         //                self.monthNumber.text = String(val.element!)
         //            }).disposed(by: bag)
         
-        // 결국에 viewModel에서 가지고 오는게 안먹는다는건디
         viewModel.step1
             .subscribe({ val in
                 self.step1 = val.element!
@@ -121,6 +123,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         calendar.appearance.titleSelectionColor = UIColor.black
         calendar.appearance.borderSelectionColor = UIColor.red
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
+        calendar.appearance.headerMinimumDissolvedAlpha = 0
     }
     
     internal func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -137,7 +140,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         print("tapped")
         self.moveCurrentPage(moveUp: false)
     }
-    
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         print("tapped")
@@ -177,10 +179,13 @@ extension TodayViewController {
     private func moveCurrentPage(moveUp: Bool) {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-        dateComponents.month = moveUp ? 1 : -1
+        
+        if !(standardMon >= 12 && moveUp == true) && !(standardMon <= 0 && moveUp == false) {
+            standardMon +=  moveUp ? 1 : -1
+            dateComponents.month = moveUp ? 1 : -1
+        }
         
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
-    
 }
