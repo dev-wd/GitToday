@@ -41,12 +41,22 @@ class CalendarViewModel: CalendarViewBindable {
         isLoading.accept(true)
         useCase.fetchContributions() { error, id  in
             print("refetch")
+            print(error)
+            
             guard error != GitTodayError.userIDLoadError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
                 print("GitTodayError.userIDLoadError")
                 return
             }
+            
+            guard error != GitTodayError.networkError else {
+                self.isLoading.accept(false)
+                self.responseStatus.accept(.failed(error!))
+                print("GitTodayError.networkError")
+                return
+            }
+            
             self.id.accept(id!)
             self.todayCount.accept(self.contributionsRepository.todayCount)
             self.weekCount.accept(self.contributionsRepository.weekCount)
@@ -69,17 +79,29 @@ class CalendarViewModel: CalendarViewBindable {
             return
         }
         
-        self.id.accept(id)
+        
         
         isLoading.accept(true)
-        useCase.firstFetchContributions(id: id) { error in
+        useCase.firstFetchContributions(id: id) { error, id in
             print("first fetch")
+            self.id.accept(id!)
+            print("id: ",id)
             guard error != GitTodayError.userIDSaveError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
                 print("GitTodayError.userIDSaveError")
                 return
             }
+            
+            guard error != GitTodayError.networkError else {
+                self.isLoading.accept(false)
+                self.responseStatus.accept(.failed(error!))
+                print("GitTodayError.networkError")
+                return
+            }
+            
+            
+            
             
             self.todayCount.accept(self.contributionsRepository.todayCount)
             self.weekCount.accept(self.contributionsRepository.weekCount)

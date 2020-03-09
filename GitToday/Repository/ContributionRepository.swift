@@ -94,7 +94,6 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
                 self.dots = dots
                 completion(nil)
             } else {
-                self.dots = nil
                 completion(error)
             }
         }

@@ -39,7 +39,7 @@ class IDInputAlertViewModel: IDInputAlertViewBindable {
     func fetch() {
         isLoading.accept(true)
         let id = input.value
-        useCase.firstFetchContributions(id: id) { error in
+        useCase.firstFetchContributions(id: id) { error, id in
             if error == GitTodayError.userIDLoadError {
                 
             }

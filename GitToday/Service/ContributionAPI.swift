@@ -39,7 +39,8 @@ class ContributionAPI : ContributionAPIProtocol {
                 completion(nil, GitTodayError.networkError)
             }
         } else {
-            completion(nil, GitTodayError.pageNotFoundError)
+            print("invalid url")
+            completion(nil, GitTodayError.networkError)
         }
     }
 }

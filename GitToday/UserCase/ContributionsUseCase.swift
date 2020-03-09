@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FetchContributionsUseCaseProtocol {
-    func firstFetchContributions(id: String, completion: @escaping (GitTodayError?)->Void)
+    func firstFetchContributions(id: String, completion: @escaping (GitTodayError?, _ id: String?)->Void)
     func fetchContributions(completion: @escaping (GitTodayError?, _ id: String?) -> Void)
 }
 
@@ -20,16 +20,22 @@ class ContributionsUseCase {
 }
 
 extension ContributionsUseCase: FetchContributionsUseCaseProtocol {
-    func firstFetchContributions(id: String, completion: @escaping (GitTodayError?) -> Void) {
-        userIDAPI.save(id, of: .id)
+    func firstFetchContributions(id: String, completion: @escaping (GitTodayError?,  _ id: String? ) -> Void) {
         contributionsRepository.fetchRepository(id: id) { error  in
-            completion(error)
+            guard error != GitTodayError.networkError else {
+                let id: String? = self.userIDAPI.load(of: .id)
+                completion(error, id)
+                return
+            }
+            
+            self.userIDAPI.save(id, of: .id)
+            completion(error, id)
         }
         
     }
     
     func fetchContributions(completion: @escaping (GitTodayError?, _ id: String?) -> Void) {
-        let id: String? = userIDAPI.load(of: .id)
+        let id: String? = self.userIDAPI.load(of: .id)
         guard id != nil else {
             completion(GitTodayError.userIDLoadError, nil)
             return

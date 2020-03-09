@@ -42,14 +42,13 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var weekNumber: UILabel!
     @IBOutlet weak var monthNumber: UILabel!
     
-    @IBOutlet weak var alarmButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
     
-    var step1: [String] = []
-    var step2: [String] = []
-    var step3: [String] = []
-    var step4: [String] = []
-    var step5: [String] = []
+    private var step1: [String] = []
+    private var step2: [String] = []
+    private var step3: [String] = []
+    private var step4: [String] = []
+    private var step5: [String] = []
     
     var standardMon: Int = 12
     
@@ -79,10 +78,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     private func bind(viewModel:  CalendarViewBindable) {
         viewModel.fetch()
-        print("fetch")
+        
         viewModel.id
-            .subscribe({ val in
-                self.idButtonTitle.titleLabel?.text = String(val.element!)
+            .subscribe(onNext: { val in
+                guard val != "" else {
+                    self.idButtonTitle.setTitle("Put your GitHub ID", for:  .normal)
+                    return
+                }
+                
+                self.idButtonTitle.setTitle(val+" 's contributions 🙌", for:  .normal)
             }).disposed(by: bag)
         
         viewModel.todayCount
@@ -145,13 +149,13 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                     self.resultHud.textLabel.text = "Success"
                     self.resultHud.indicatorView = JGProgressHUDSuccessIndicatorView()
                 case .failed(GitTodayError.userIDLoadError):
-                    self.resultHud.textLabel.text = "userIDLoadError"
+                    self.resultHud.textLabel.text = "put your github ID"
                 case .failed(GitTodayError.userIDSaveError):
                     self.resultHud.textLabel.text = "userIDSaveError"
                 case .failed(GitTodayError.networkError):
-                    self.resultHud.textLabel.text = "networkError"
+                    self.resultHud.textLabel.text = "Invalid ID"
                 case .failed(GitTodayError.userIDDidNotInputError):
-                    self.resultHud.textLabel.text = "userIDDidNotInputError"
+                    self.resultHud.textLabel.text = "Please input github ID"
                 case .failed(_):
                     self.resultHud.textLabel.text = "unknownError"
                 }
@@ -160,24 +164,30 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
                 self.resultHud.dismiss(afterDelay: 0.3)
             }).disposed(by: bag)
         
-        updateButton.rx.tap.subscribe(onNext:{
-            viewModel.fetch()
-        }).disposed(by: bag)
+        updateButton.rx
+            .tap
+            .subscribe(onNext:{
+                viewModel.fetch()
+                self.calendar.reloadData()
+            }).disposed(by: bag)
         
-        idButtonTitle.rx.tap.subscribe(onNext:{
-            let alert = UIAlertController(title: "GitHub ID", message: "", preferredStyle: UIAlertController.Style.alert)
-            let done = UIAlertAction(title:"Done", style: .default) { (action) in
-                viewModel.fetchUpdate(id: (alert.textFields?[0].text!)!)
-            }
-            let cancel = UIAlertAction(title:"Cancel", style: .cancel)
-            
-            alert.addTextField() { textField in
-                textField.placeholder = "input your GitHub ID"
-            }
-            alert.addAction(cancel)
-            alert.addAction(done)
-            self.present(alert, animated: true, completion: nil)
-        }).disposed(by: bag)
+        idButtonTitle.rx
+            .tap
+            .subscribe(onNext:{
+                let alert = UIAlertController(title: "GitHub ID", message: "", preferredStyle: UIAlertController.Style.alert)
+                let done = UIAlertAction(title:"Done", style: .default) { (action) in
+                    viewModel.fetchUpdate(id: (alert.textFields?[0].text!)!)
+                    self.calendar.reloadData()
+                }
+                let cancel = UIAlertAction(title:"Cancel", style: .cancel)
+                
+                alert.addTextField() { textField in
+                    textField.placeholder = "input your GitHub ID"
+                }
+                alert.addAction(cancel)
+                alert.addAction(done)
+                self.present(alert, animated: true, completion: nil)
+            }).disposed(by: bag)
     }
     
     
@@ -190,6 +200,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.appearance.titleSelectionColor = UIColor.black
         calendar.appearance.borderSelectionColor = UIColor.red
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
+        
+        idButtonTitle.titleLabel?.minimumScaleFactor = 0.5
+        idButtonTitle.titleLabel?.numberOfLines = 1
+        idButtonTitle.titleLabel?.adjustsFontSizeToFitWidth = true
+        idButtonTitle.titleLabel?.textAlignment = .right
         
     }
 }
@@ -233,17 +248,12 @@ extension CalendarViewController {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
         
-        
-        
-        
         if !(standardMon >= 12 && moveUp == true) && !(standardMon <= 0 && moveUp == false) {
             standardMon +=  moveUp ? 1 : -1
             dateComponents.month = moveUp ? 1 : -1
         }
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
-        
-        
     }
 }
 // alarm logic
