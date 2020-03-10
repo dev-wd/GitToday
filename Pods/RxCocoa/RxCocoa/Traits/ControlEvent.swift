@@ -12,7 +12,7 @@ import RxSwift
 public protocol ControlEventType : ObservableType {
 
     /// - returns: `ControlEvent` interface
-    func asControlEvent() -> ControlEvent<Element>
+    func asControlEvent() -> ControlEvent<E>
 }
 
 /**
@@ -20,9 +20,10 @@ public protocol ControlEventType : ObservableType {
 
     Properties:
 
+    - it never fails,
     - it doesn’t send any initial value on subscription,
     - it `Complete`s the sequence when the control deallocates,
-    - it never errors out
+    - it never errors out, and
     - it delivers events on `MainScheduler.instance`.
 
     **The implementation of `ControlEvent` will ensure that sequence of events is being subscribed on main scheduler
@@ -32,11 +33,11 @@ public protocol ControlEventType : ObservableType {
 
     **If they aren’t, using this trait will communicate wrong properties, and could potentially break someone’s code.**
 
-    **If the `events` observable sequence passed into the initializer doesn’t satisfy all enumerated
+    **If the `events` observable sequence passed into thr initializer doesn’t satisfy all enumerated
      properties, don’t use this trait.**
 */
 public struct ControlEvent<PropertyType> : ControlEventType {
-    public typealias Element = PropertyType
+    public typealias E = PropertyType
 
     let _events: Observable<PropertyType>
 
@@ -44,7 +45,7 @@ public struct ControlEvent<PropertyType> : ControlEventType {
     ///
     /// - parameter events: Observable sequence that represents events.
     /// - returns: Control event created with a observable sequence of events.
-    public init<Ev: ObservableType>(events: Ev) where Ev.Element == Element {
+    public init<Ev: ObservableType>(events: Ev) where Ev.E == E {
         self._events = events.subscribeOn(ConcurrentMainScheduler.instance)
     }
 
@@ -52,17 +53,17 @@ public struct ControlEvent<PropertyType> : ControlEventType {
     ///
     /// - parameter observer: Observer to subscribe to events.
     /// - returns: Disposable object that can be used to unsubscribe the observer from receiving control events.
-    public func subscribe<Observer: ObserverType>(_ observer: Observer) -> Disposable where Observer.Element == Element {
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         return self._events.subscribe(observer)
     }
 
     /// - returns: `Observable` interface.
-    public func asObservable() -> Observable<Element> {
+    public func asObservable() -> Observable<E> {
         return self._events
     }
 
     /// - returns: `ControlEvent` interface.
-    public func asControlEvent() -> ControlEvent<Element> {
+    public func asControlEvent() -> ControlEvent<E> {
         return self
     }
 }

@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19F3B940B9A44272E7FFE480 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */; };
-		371EFCA5566B4D6B0CEFBB1A /* Pods_GitToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */; };
-		650558DCE5F044CC8EBC37AA /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */; };
-		72B1C9B6FF0A5AC84ABDBFEE /* Pods_GitToday_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */; };
-		EA0C120823E8F65600BE20CF /* ContributionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */; };
+		2BC9AC14E7CFA9F54AB8D96E /* Pods_GitToday_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC2238FB856C8B44B49389D /* Pods_GitToday_Widget.framework */; };
+		8400D0E428E5AFE6DDEEC313 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */; };
+		9AA8D2D4964F112A1E16DA9A /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5347CC5143069E26B4C65D6 /* Pods_GitTodayTests.framework */; };
+		E0BDD63BF0055FA57A4F1A6C /* Pods_GitToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E50D90D22130AB3AC73D2034 /* Pods_GitToday.framework */; };
 		EA123EAE240F65C9007E0397 /* IDInputAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */; };
 		EA746A262412266A0073810B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E1824067A5000003112 /* UIColorExtensions.swift */; };
 		EA746A27241226720073810B /* ContributionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C63E23E2967600398B39 /* ContributionRepository.swift */; };
@@ -45,6 +44,8 @@
 		EAF232F023E8FD2E008A455B /* KeyIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */; };
 		EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F123E8FD60008A455B /* GitTodayError.swift */; };
 		EAF232F423E98100008A455B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F323E98100008A455B /* CalendarViewModel.swift */; };
+		EAF73A1024174E56002C354F /* ContributionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */; };
+		EAF73A11241754AF002C354F /* GitToday Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +63,17 @@
 			remoteGlobalIDString = EAD2C60423E295E900398B39;
 			remoteInfo = GitToday;
 		};
+		EAF73A12241754AF002C354F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAD2C5FD23E295E900398B39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAD2C64723E2AE5200398B39;
+			remoteInfo = "GitToday Widget";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EAA27CDF2414B6EB004E0A35 /* Embed Frameworks */ = {
+		EA8E1A07241744FD00240CA1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -75,27 +83,38 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAF73A14241754AF002C354F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EAF73A11241754AF002C354F /* GitToday Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_GitTodayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.release.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.release.xcconfig"; sourceTree = "<group>"; };
-		307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.debug.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.debug.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.debug.xcconfig"; sourceTree = "<group>"; };
-		617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.release.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.release.xcconfig"; sourceTree = "<group>"; };
-		6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.release.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.release.xcconfig"; sourceTree = "<group>"; };
-		756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.release.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.debug.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitTodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_GitTodayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E70B6B904F87759F36480F1 /* Pods-GitToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.release.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.release.xcconfig"; sourceTree = "<group>"; };
+		58A27CD4481A8040337AD1A8 /* Pods-GitToday Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.release.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.release.xcconfig"; sourceTree = "<group>"; };
+		692562ADB8DCA81FC3F14857 /* Pods-GitToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.debug.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.debug.xcconfig"; sourceTree = "<group>"; };
+		8B3C933D3231D95132B0705C /* Pods-GitToday-GitTodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.release.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8EC2238FB856C8B44B49389D /* Pods_GitToday_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FCF43EDF8CD7BAB7789C88 /* Pods-GitTodayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.release.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.release.xcconfig"; sourceTree = "<group>"; };
+		B22484E66005ED2631869B64 /* Pods-GitTodayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitTodayTests.debug.xcconfig"; path = "Target Support Files/Pods-GitTodayTests/Pods-GitTodayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5347CC5143069E26B4C65D6 /* Pods_GitTodayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitTodayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5E6EA6CFC657416AD43665 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0042D518E0E9ADE24E699E6 /* Pods-GitToday Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.debug.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		E50D90D22130AB3AC73D2034 /* Pods_GitToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsUseCase.swift; sourceTree = "<group>"; };
 		EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputAlertViewController.swift; sourceTree = "<group>"; };
+		EA26FEC624175D8600180606 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA746A2E2412279E0073810B /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		EA746A3124122F610073810B /* GitToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitToday.entitlements; sourceTree = "<group>"; };
 		EA746A3224122FEB0073810B /* GitToday Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GitToday Widget.entitlements"; sourceTree = "<group>"; };
-		EAA27CD82414B5FA004E0A35 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC52E15240678B400003112 /* GitTodayAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayAlertState.swift; sourceTree = "<group>"; };
 		EAC52E1824067A5000003112 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		EAD2C60523E295E900398B39 /* GitToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +133,7 @@
 		EAD2C63E23E2967600398B39 /* ContributionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionRepository.swift; sourceTree = "<group>"; };
 		EAD2C64023E2969600398B39 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
 		EAD2C64223E296CF00398B39 /* ContributionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionAPI.swift; sourceTree = "<group>"; };
-		EAD2C64823E2AE5200398B39 /* GitToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GitToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GitToday Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD2C64923E2AE5200398B39 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EAD2C64C23E2AE5200398B39 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		EAD2C64F23E2AE5200398B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -133,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371EFCA5566B4D6B0CEFBB1A /* Pods_GitToday.framework in Frameworks */,
+				E0BDD63BF0055FA57A4F1A6C /* Pods_GitToday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650558DCE5F044CC8EBC37AA /* Pods_GitTodayTests.framework in Frameworks */,
+				9AA8D2D4964F112A1E16DA9A /* Pods_GitTodayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F3B940B9A44272E7FFE480 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */,
+				8400D0E428E5AFE6DDEEC313 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD2C64A23E2AE5200398B39 /* NotificationCenter.framework in Frameworks */,
-				72B1C9B6FF0A5AC84ABDBFEE /* Pods_GitToday_Widget.framework in Frameworks */,
+				2BC9AC14E7CFA9F54AB8D96E /* Pods_GitToday_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,14 +187,14 @@
 		A74A67A52BF63662E8DB0DD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */,
-				617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */,
-				A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */,
-				84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */,
-				8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */,
-				6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */,
-				307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */,
-				2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */,
+				692562ADB8DCA81FC3F14857 /* Pods-GitToday.debug.xcconfig */,
+				0E70B6B904F87759F36480F1 /* Pods-GitToday.release.xcconfig */,
+				D0042D518E0E9ADE24E699E6 /* Pods-GitToday Widget.debug.xcconfig */,
+				58A27CD4481A8040337AD1A8 /* Pods-GitToday Widget.release.xcconfig */,
+				BF5E6EA6CFC657416AD43665 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */,
+				8B3C933D3231D95132B0705C /* Pods-GitToday-GitTodayUITests.release.xcconfig */,
+				B22484E66005ED2631869B64 /* Pods-GitTodayTests.debug.xcconfig */,
+				A0FCF43EDF8CD7BAB7789C88 /* Pods-GitTodayTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -183,22 +202,22 @@
 		D01380DF52A56A601B9405C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAA27CD82414B5FA004E0A35 /* FSCalendar.framework */,
-				40EA50C22DA7D2A290D8C404 /* Pods_GitToday.framework */,
-				2156956B74DC1B814D92C191 /* Pods_GitToday_GitTodayUITests.framework */,
-				B699B3A4FEB5FBEF6CBDB337 /* Pods_GitTodayTests.framework */,
+				EA26FEC624175D8600180606 /* FSCalendar.framework */,
 				EAD2C64923E2AE5200398B39 /* NotificationCenter.framework */,
-				756A4B3C25F9E962D4D96BC6 /* Pods_GitToday_Widget.framework */,
+				E50D90D22130AB3AC73D2034 /* Pods_GitToday.framework */,
+				8EC2238FB856C8B44B49389D /* Pods_GitToday_Widget.framework */,
+				09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */,
+				B5347CC5143069E26B4C65D6 /* Pods_GitTodayTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EA0C120623E8F60600BE20CF /* UserCase */ = {
+		EA0C120623E8F60600BE20CF /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
 				EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */,
 			);
-			path = UserCase;
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		EA746A2224121C550073810B /* View */ = {
@@ -244,7 +263,7 @@
 				EAD2C60523E295E900398B39 /* GitToday.app */,
 				EAD2C61B23E295ED00398B39 /* GitTodayTests.xctest */,
 				EAD2C62623E295EE00398B39 /* GitTodayUITests.xctest */,
-				EAD2C64823E2AE5200398B39 /* GitToday.appex */,
+				EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				EA746A3124122F610073810B /* GitToday.entitlements */,
-				EA0C120623E8F60600BE20CF /* UserCase */,
+				EA0C120623E8F60600BE20CF /* UseCase */,
 				EAC52E1724067A3300003112 /* Extensions */,
 				EAF232EE23E8FD1C008A455B /* Helper */,
 				EAD2C63D23E2964A00398B39 /* Repository */,
@@ -362,16 +381,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD2C62F23E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitToday" */;
 			buildPhases = (
-				2DDEE25A1901B285E34591A5 /* [CP] Check Pods Manifest.lock */,
+				EEBABB63786F8ACC57E314F6 /* [CP] Check Pods Manifest.lock */,
 				EAD2C60123E295E900398B39 /* Sources */,
 				EAD2C60223E295E900398B39 /* Frameworks */,
 				EAD2C60323E295E900398B39 /* Resources */,
-				B126A7ABA76CA26235EA9D91 /* [CP] Embed Pods Frameworks */,
-				EAA27CDF2414B6EB004E0A35 /* Embed Frameworks */,
+				EAF73A14241754AF002C354F /* Embed App Extensions */,
+				17DB2397F99DBB40988B8E2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EAF73A13241754AF002C354F /* PBXTargetDependency */,
 			);
 			name = GitToday;
 			productName = GitToday;
@@ -382,7 +402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD2C63223E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayTests" */;
 			buildPhases = (
-				BFF09CBDCB0A207E3C4C0BB3 /* [CP] Check Pods Manifest.lock */,
+				7E76F95B09726D8288EF6D6F /* [CP] Check Pods Manifest.lock */,
 				EAD2C61723E295ED00398B39 /* Sources */,
 				EAD2C61823E295ED00398B39 /* Frameworks */,
 				EAD2C61923E295ED00398B39 /* Resources */,
@@ -401,11 +421,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD2C63523E295EE00398B39 /* Build configuration list for PBXNativeTarget "GitTodayUITests" */;
 			buildPhases = (
-				F91BBB6F8D049D56DFF4B034 /* [CP] Check Pods Manifest.lock */,
+				ED01185E472ACCD87F727AAC /* [CP] Check Pods Manifest.lock */,
 				EAD2C62223E295EE00398B39 /* Sources */,
 				EAD2C62323E295EE00398B39 /* Frameworks */,
 				EAD2C62423E295EE00398B39 /* Resources */,
-				531AAE8C71E53F5379F81912 /* [CP] Embed Pods Frameworks */,
+				A2DA001F713B88D4ACD71F24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,10 +441,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAD2C65523E2AE5200398B39 /* Build configuration list for PBXNativeTarget "GitToday Widget" */;
 			buildPhases = (
-				1DD344D1491378B3E73BE888 /* [CP] Check Pods Manifest.lock */,
+				C9863E6F48F647AD3EDD6CBC /* [CP] Check Pods Manifest.lock */,
 				EAD2C64423E2AE5200398B39 /* Sources */,
 				EAD2C64523E2AE5200398B39 /* Frameworks */,
 				EAD2C64623E2AE5200398B39 /* Resources */,
+				EA8E1A07241744FD00240CA1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,7 +453,7 @@
 			);
 			name = "GitToday Widget";
 			productName = "GitToday Widget";
-			productReference = EAD2C64823E2AE5200398B39 /* GitToday.appex */;
+			productReference = EAD2C64823E2AE5200398B39 /* GitToday Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -518,68 +539,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DD344D1491378B3E73BE888 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GitToday Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DDEE25A1901B285E34591A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GitToday-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		531AAE8C71E53F5379F81912 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B126A7ABA76CA26235EA9D91 /* [CP] Embed Pods Frameworks */ = {
+		17DB2397F99DBB40988B8E2B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,7 +556,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitToday/Pods-GitToday-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BFF09CBDCB0A207E3C4C0BB3 /* [CP] Check Pods Manifest.lock */ = {
+		7E76F95B09726D8288EF6D6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,7 +578,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F91BBB6F8D049D56DFF4B034 /* [CP] Check Pods Manifest.lock */ = {
+		A2DA001F713B88D4ACD71F24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9863E6F48F647AD3EDD6CBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitToday Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED01185E472ACCD87F727AAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -640,6 +639,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EEBABB63786F8ACC57E314F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitToday-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -651,9 +672,9 @@
 				EAD2C63F23E2967600398B39 /* ContributionRepository.swift in Sources */,
 				EA746A2F2412279E0073810B /* ResponseStatus.swift in Sources */,
 				EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */,
-				EA0C120823E8F65600BE20CF /* ContributionsUseCase.swift in Sources */,
 				EAD2C64323E296CF00398B39 /* ContributionAPI.swift in Sources */,
 				EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */,
+				EAF73A1024174E56002C354F /* ContributionsUseCase.swift in Sources */,
 				EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */,
 				EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */,
 				EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */,
@@ -712,6 +733,11 @@
 			isa = PBXTargetDependency;
 			target = EAD2C60423E295E900398B39 /* GitToday */;
 			targetProxy = EAD2C62723E295EE00398B39 /* PBXContainerItemProxy */;
+		};
+		EAF73A13241754AF002C354F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAD2C64723E2AE5200398B39 /* GitToday Widget */;
+			targetProxy = EAF73A12241754AF002C354F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -859,14 +885,16 @@
 		};
 		EAD2C63023E295EE00398B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C56FE6408A757D63538EE19 /* Pods-GitToday.debug.xcconfig */;
+			baseConfigurationReference = 692562ADB8DCA81FC3F14857 /* Pods-GitToday.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitToday/GitToday.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = GitToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -875,20 +903,22 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EAD2C63123E295EE00398B39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 617C0F691F3272F1A333277F /* Pods-GitToday.release.xcconfig */;
+			baseConfigurationReference = 0E70B6B904F87759F36480F1 /* Pods-GitToday.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitToday/GitToday.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = GitToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -897,13 +927,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		EAD2C63323E295EE00398B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A56F408D70B1EE1ABC44E37 /* Pods-GitTodayTests.debug.xcconfig */;
+			baseConfigurationReference = B22484E66005ED2631869B64 /* Pods-GitTodayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -926,7 +956,7 @@
 		};
 		EAD2C63423E295EE00398B39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6278152B431F8C58CD7D0E77 /* Pods-GitTodayTests.release.xcconfig */;
+			baseConfigurationReference = A0FCF43EDF8CD7BAB7789C88 /* Pods-GitTodayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -949,7 +979,7 @@
 		};
 		EAD2C63623E295EE00398B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A724131B34555C5176B717D1 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */;
+			baseConfigurationReference = BF5E6EA6CFC657416AD43665 /* Pods-GitToday-GitTodayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -970,7 +1000,7 @@
 		};
 		EAD2C63723E295EE00398B39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84AB6D022A351140513DCAA5 /* Pods-GitToday-GitTodayUITests.release.xcconfig */;
+			baseConfigurationReference = 8B3C933D3231D95132B0705C /* Pods-GitToday-GitTodayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -991,47 +1021,51 @@
 		};
 		EAD2C65623E2AE5200398B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 307DBE8D2BD26498D7CD7B86 /* Pods-GitToday Widget.debug.xcconfig */;
+			baseConfigurationReference = D0042D518E0E9ADE24E699E6 /* Pods-GitToday Widget.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = "GitToday Widget/GitToday Widget.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = "GitToday Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
-				PRODUCT_NAME = GitToday;
+				PRODUCT_NAME = "GitToday Widget";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EAD2C65723E2AE5200398B39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2186B3D94D8B2737D4352EF1 /* Pods-GitToday Widget.release.xcconfig */;
+			baseConfigurationReference = 58A27CD4481A8040337AD1A8 /* Pods-GitToday Widget.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = "GitToday Widget/GitToday Widget.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = "GitToday Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
-				PRODUCT_NAME = GitToday;
+				PRODUCT_NAME = "GitToday Widget";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

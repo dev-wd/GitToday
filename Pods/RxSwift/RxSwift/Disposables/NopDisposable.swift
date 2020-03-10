@@ -9,11 +9,11 @@
 /// Represents a disposable that does nothing on disposal.
 ///
 /// Nop = No Operation
-private struct NopDisposable : Disposable {
+fileprivate struct NopDisposable : Disposable {
  
     fileprivate static let noOp: Disposable = NopDisposable()
     
-    private init() {
+    fileprivate init() {
         
     }
     

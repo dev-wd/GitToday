@@ -17,10 +17,10 @@ extension UITableView: HasPrefetchDataSource {
 }
 
 @available(iOS 10.0, tvOS 10.0, *)
-private let tableViewPrefetchDataSourceNotSet = TableViewPrefetchDataSourceNotSet()
+fileprivate let tableViewPrefetchDataSourceNotSet = TableViewPrefetchDataSourceNotSet()
 
 @available(iOS 10.0, tvOS 10.0, *)
-private final class TableViewPrefetchDataSourceNotSet
+fileprivate final class TableViewPrefetchDataSourceNotSet
     : NSObject
     , UITableViewDataSourcePrefetching {
 
@@ -48,7 +48,7 @@ open class RxTableViewDataSourcePrefetchingProxy
         self.register { RxTableViewDataSourcePrefetchingProxy(tableView: $0) }
     }
 
-    private var _prefetchRowsPublishSubject: PublishSubject<[IndexPath]>?
+    fileprivate var _prefetchRowsPublishSubject: PublishSubject<[IndexPath]>?
 
     /// Optimized version used for observing prefetch rows callbacks.
     internal var prefetchRowsPublishSubject: PublishSubject<[IndexPath]> {

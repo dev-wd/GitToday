@@ -1,6 +1,6 @@
 //
 //  BehaviorRelay.swift
-//  RxRelay
+//  RxCocoa
 //
 //  Created by Krunoslav Zaher on 10/7/17.
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
@@ -12,6 +12,8 @@ import RxSwift
 ///
 /// Unlike `BehaviorSubject` it can't terminate with error or completed.
 public final class BehaviorRelay<Element>: ObservableType {
+    public typealias E = Element
+
     private let _subject: BehaviorSubject<Element>
 
     /// Accepts `event` and emits it to subscribers
@@ -31,7 +33,7 @@ public final class BehaviorRelay<Element>: ObservableType {
     }
 
     /// Subscribes observer
-    public func subscribe<Observer: ObserverType>(_ observer: Observer) -> Disposable where Observer.Element == Element {
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         return self._subject.subscribe(observer)
     }
 

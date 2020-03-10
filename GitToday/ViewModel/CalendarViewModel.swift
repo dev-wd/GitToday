@@ -84,7 +84,7 @@ class CalendarViewModel: CalendarViewBindable {
         isLoading.accept(true)
         useCase.firstFetchContributions(id: id) { error, id in
             print("first fetch")
-            self.id.accept(id!)
+            self.id.accept(id ?? "")
             print("id: ",id)
             guard error != GitTodayError.userIDSaveError else {
                 self.isLoading.accept(false)

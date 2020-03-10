@@ -15,9 +15,9 @@ extension UITableView: HasDataSource {
     public typealias DataSource = UITableViewDataSource
 }
 
-private let tableViewDataSourceNotSet = TableViewDataSourceNotSet()
+fileprivate let tableViewDataSourceNotSet = TableViewDataSourceNotSet()
 
-private final class TableViewDataSourceNotSet
+fileprivate final class TableViewDataSourceNotSet
     : NSObject
     , UITableViewDataSource {
 
@@ -50,7 +50,7 @@ open class RxTableViewDataSourceProxy
         self.register { RxTableViewDataSourceProxy(tableView: $0) }
     }
 
-    private weak var _requiredMethodsDataSource: UITableViewDataSource? = tableViewDataSourceNotSet
+    fileprivate weak var _requiredMethodsDataSource: UITableViewDataSource? = tableViewDataSourceNotSet
 
     // MARK: delegate
 

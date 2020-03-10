@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "gittodaylaunch.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "kindpng_3870401 copy.png",
+      "filename" : "gittodaylaunch-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "gittodaylaunch-2.png",
       "scale" : "3x"
     }
   ],

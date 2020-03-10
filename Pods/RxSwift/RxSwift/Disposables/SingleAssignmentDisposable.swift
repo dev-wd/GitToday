@@ -13,7 +13,7 @@ If an underlying disposable resource has already been set, future attempts to se
 */
 public final class SingleAssignmentDisposable : DisposeBase, Cancelable {
 
-    private enum DisposeState: Int32 {
+    fileprivate enum DisposeState: Int32 {
         case disposed = 1
         case disposableSet = 2
     }

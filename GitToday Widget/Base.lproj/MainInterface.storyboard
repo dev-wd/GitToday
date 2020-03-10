@@ -70,6 +70,8 @@
                     <size key="freeformSize" width="320" height="280"/>
                     <connections>
                         <outlet property="calendar" destination="HbE-Ts-bwG" id="jxt-Ts-Ydn"/>
+                        <outlet property="nextButton" destination="TrF-s5-hhJ" id="uTC-lI-N2J"/>
+                        <outlet property="prevButton" destination="QIB-Ki-uQ2" id="rAy-if-v1v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

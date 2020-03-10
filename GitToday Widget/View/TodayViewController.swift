@@ -30,10 +30,13 @@ protocol TodayViewBindable {
     
     
     func fetch()
+    
 }
 class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
     
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     var step1: [String] = []
     var step2: [String] = []
@@ -72,21 +75,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         viewModel.fetch()
         print("fetch")
         
-        //        viewModel.todayCount
-        //            .subscribe({ val in
-        //                self.todayNumber.text = String(val.element!)
-        //            }).disposed(by: bag)
-        //
-        //        viewModel.weekCount
-        //            .subscribe({ val in
-        //                self.weekNumber.text = String(val.element!)
-        //            }).disposed(by: bag)
-        //
-        //        viewModel.monthCount
-        //            .subscribe({ val in
-        //                self.monthNumber.text = String(val.element!)
-        //            }).disposed(by: bag)
-        
         viewModel.step1
             .subscribe({ val in
                 self.step1 = val.element!
@@ -118,6 +106,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scrollDirection = .horizontal
+        calendar.scrollEnabled = true
         calendar.appearance.borderRadius = 0.1
         calendar.appearance.selectionColor = UIColor(white: 1, alpha: 0)
         calendar.appearance.titleSelectionColor = UIColor.black
@@ -129,9 +118,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
     internal func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
             calendar.scope = .month
+            prevButton.isHidden = false
+            nextButton.isHidden = false
             preferredContentSize = CGSize(width: 0, height: 280)
         } else {
             calendar.scope = .week
+            prevButton.isHidden = true
+            nextButton.isHidden = true
             preferredContentSize = maxSize
         }
     }

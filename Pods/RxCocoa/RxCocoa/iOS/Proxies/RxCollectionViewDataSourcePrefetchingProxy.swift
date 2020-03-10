@@ -17,10 +17,10 @@ extension UICollectionView: HasPrefetchDataSource {
 }
 
 @available(iOS 10.0, tvOS 10.0, *)
-private let collectionViewPrefetchDataSourceNotSet = CollectionViewPrefetchDataSourceNotSet()
+fileprivate let collectionViewPrefetchDataSourceNotSet = CollectionViewPrefetchDataSourceNotSet()
 
 @available(iOS 10.0, tvOS 10.0, *)
-private final class CollectionViewPrefetchDataSourceNotSet
+fileprivate final class CollectionViewPrefetchDataSourceNotSet
     : NSObject
     , UICollectionViewDataSourcePrefetching {
 
@@ -48,7 +48,7 @@ open class RxCollectionViewDataSourcePrefetchingProxy
         self.register { RxCollectionViewDataSourcePrefetchingProxy(collectionView: $0) }
     }
 
-    private var _prefetchItemsPublishSubject: PublishSubject<[IndexPath]>?
+    fileprivate var _prefetchItemsPublishSubject: PublishSubject<[IndexPath]>?
 
     /// Optimized version used for observing prefetch items callbacks.
     internal var prefetchItemsPublishSubject: PublishSubject<[IndexPath]> {

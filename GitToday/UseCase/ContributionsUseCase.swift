@@ -27,11 +27,9 @@ extension ContributionsUseCase: FetchContributionsUseCaseProtocol {
                 completion(error, id)
                 return
             }
-            
             self.userIDAPI.save(id, of: .id)
             completion(error, id)
         }
-        
     }
     
     func fetchContributions(completion: @escaping (GitTodayError?, _ id: String?) -> Void) {
