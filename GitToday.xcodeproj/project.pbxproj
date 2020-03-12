@@ -11,7 +11,6 @@
 		8400D0E428E5AFE6DDEEC313 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */; };
 		9AA8D2D4964F112A1E16DA9A /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5347CC5143069E26B4C65D6 /* Pods_GitTodayTests.framework */; };
 		E0BDD63BF0055FA57A4F1A6C /* Pods_GitToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E50D90D22130AB3AC73D2034 /* Pods_GitToday.framework */; };
-		EA123EAE240F65C9007E0397 /* IDInputAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */; };
 		EA746A262412266A0073810B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E1824067A5000003112 /* UIColorExtensions.swift */; };
 		EA746A27241226720073810B /* ContributionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C63E23E2967600398B39 /* ContributionRepository.swift */; };
 		EA746A28241226740073810B /* ContributionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */; };
@@ -22,7 +21,6 @@
 		EA746A2D241226B00073810B /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C64023E2969600398B39 /* Dot.swift */; };
 		EA746A2F2412279E0073810B /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA746A2E2412279E0073810B /* ResponseStatus.swift */; };
 		EA746A30241227A50073810B /* ResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA746A2E2412279E0073810B /* ResponseStatus.swift */; };
-		EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E15240678B400003112 /* GitTodayAlertState.swift */; };
 		EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC52E1824067A5000003112 /* UIColorExtensions.swift */; };
 		EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C60823E295E900398B39 /* AppDelegate.swift */; };
 		EAD2C60B23E295E900398B39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C60A23E295E900398B39 /* SceneDelegate.swift */; };
@@ -40,7 +38,6 @@
 		EAD2C65A23E2C19C00398B39 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */; };
 		EAD2C65E23E3EE7700398B39 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C65D23E3EE7700398B39 /* TodayViewModel.swift */; };
 		EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD2C66123E3F66B00398B39 /* UserDefaultAPI.swift */; };
-		EAD82B53240B7395007EF25D /* IDInputAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD82B52240B7395007EF25D /* IDInputAlertViewModel.swift */; };
 		EAF232F023E8FD2E008A455B /* KeyIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */; };
 		EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F123E8FD60008A455B /* GitTodayError.swift */; };
 		EAF232F423E98100008A455B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF232F323E98100008A455B /* CalendarViewModel.swift */; };
@@ -85,14 +82,14 @@
 		};
 		EAF73A14241754AF002C354F /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				EAF73A11241754AF002C354F /* GitToday Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -110,12 +107,10 @@
 		D0042D518E0E9ADE24E699E6 /* Pods-GitToday Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.debug.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		E50D90D22130AB3AC73D2034 /* Pods_GitToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0C120723E8F65600BE20CF /* ContributionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsUseCase.swift; sourceTree = "<group>"; };
-		EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputAlertViewController.swift; sourceTree = "<group>"; };
 		EA26FEC624175D8600180606 /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA746A2E2412279E0073810B /* ResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatus.swift; sourceTree = "<group>"; };
 		EA746A3124122F610073810B /* GitToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitToday.entitlements; sourceTree = "<group>"; };
 		EA746A3224122FEB0073810B /* GitToday Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GitToday Widget.entitlements"; sourceTree = "<group>"; };
-		EAC52E15240678B400003112 /* GitTodayAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayAlertState.swift; sourceTree = "<group>"; };
 		EAC52E1824067A5000003112 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		EAD2C60523E295E900398B39 /* GitToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD2C60823E295E900398B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +136,6 @@
 		EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		EAD2C65D23E3EE7700398B39 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		EAD2C66123E3F66B00398B39 /* UserDefaultAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAPI.swift; sourceTree = "<group>"; };
-		EAD82B52240B7395007EF25D /* IDInputAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDInputAlertViewModel.swift; sourceTree = "<group>"; };
 		EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyIdentifier.swift; sourceTree = "<group>"; };
 		EAF232F123E8FD60008A455B /* GitTodayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTodayError.swift; sourceTree = "<group>"; };
 		EAF232F323E98100008A455B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -320,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				EAF232F323E98100008A455B /* CalendarViewModel.swift */,
-				EAD82B52240B7395007EF25D /* IDInputAlertViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -329,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				EAD2C65923E2C19C00398B39 /* CalendarViewController.swift */,
-				EA123EAD240F65C9007E0397 /* IDInputAlertViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,7 +360,6 @@
 			children = (
 				EAF232EF23E8FD2E008A455B /* KeyIdentifier.swift */,
 				EAF232F123E8FD60008A455B /* GitTodayError.swift */,
-				EAC52E15240678B400003112 /* GitTodayAlertState.swift */,
 				EA746A2E2412279E0073810B /* ResponseStatus.swift */,
 			);
 			path = Helper;
@@ -675,11 +666,8 @@
 				EAD2C64323E296CF00398B39 /* ContributionAPI.swift in Sources */,
 				EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */,
 				EAF73A1024174E56002C354F /* ContributionsUseCase.swift in Sources */,
-				EAC52E16240678B400003112 /* GitTodayAlertState.swift in Sources */,
 				EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */,
 				EAF232F223E8FD60008A455B /* GitTodayError.swift in Sources */,
-				EA123EAE240F65C9007E0397 /* IDInputAlertViewController.swift in Sources */,
-				EAD82B53240B7395007EF25D /* IDInputAlertViewModel.swift in Sources */,
 				EAD2C64123E2969600398B39 /* Dot.swift in Sources */,
 				EAD2C65A23E2C19C00398B39 /* CalendarViewController.swift in Sources */,
 				EAD2C60B23E295E900398B39 /* SceneDelegate.swift in Sources */,
@@ -899,6 +887,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -923,6 +912,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1035,6 +1025,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
 				PRODUCT_NAME = "GitToday Widget";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1060,6 +1051,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.final-app.GitToday.GitToday-Widget";
 				PRODUCT_NAME = "GitToday Widget";
 				PROVISIONING_PROFILE_SPECIFIER = "";
