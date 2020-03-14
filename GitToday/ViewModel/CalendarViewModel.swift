@@ -40,20 +40,16 @@ class CalendarViewModel: CalendarViewBindable {
     func fetch() {
         isLoading.accept(true)
         useCase.fetchContributions() { error, id  in
-            print("refetch")
-            print(error)
             
             guard error != GitTodayError.userIDLoadError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
-                print("GitTodayError.userIDLoadError")
                 return
             }
             
             guard error != GitTodayError.networkError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
-                print("GitTodayError.networkError")
                 return
             }
             
@@ -83,20 +79,16 @@ class CalendarViewModel: CalendarViewBindable {
         
         isLoading.accept(true)
         useCase.firstFetchContributions(id: id) { error, id in
-            print("first fetch")
             self.id.accept(id ?? "")
-            print("id: ",id)
             guard error != GitTodayError.userIDSaveError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
-                print("GitTodayError.userIDSaveError")
                 return
             }
             
             guard error != GitTodayError.networkError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))
-                print("GitTodayError.networkError")
                 return
             }
             
