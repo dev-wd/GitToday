@@ -5,7 +5,7 @@ Why don't you see __your contributions as a calendar on widget__?
 GitToday helps you to do __1 DAY, 1 COMMIT__!
 
 <img src="/screenshot/screenshot1.png" align="left" width="300" height="560">
-<img src="/screenshot/screenshot3.png" align="center" width="300" height="560">
+<img src="/screenshot/screenshot4.png" align="center" width="300" height="560">
 
 ## How to use
 - Click 'Put your GitHub ID' , and type your GitHub ID.
