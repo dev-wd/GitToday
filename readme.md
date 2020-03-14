@@ -3,9 +3,9 @@
 Why don't you see your contribution as a calendar on widget?
 GitToday helps you to do 1 DAY, 1 COMMIT!
 
-<img src="/screenshot/screenshot1.png" style="float: left;" width="300" height="560">
-<img src="/screenshot/screenshot2.png" style="float: right;"width="300" height="560">
-<img src="/screenshot/screenshot3.png" width="300"  height="560">
+<img src="/screenshot/screenshot1.png" align="left" width="300" height="560">
+<img src="/screenshot/screenshot2.png" align="center" width="300" height="560">
+<img src="/screenshot/screenshot3.png" align="right" width="300"  height="560">
 ## Description
 - Click 'Put your GitHub ID' , and type your GitHub ID.
 - Show the counts of your contributions by today, week, and month. 
