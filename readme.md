@@ -9,10 +9,10 @@ GitToday helps you to do __1 DAY, 1 COMMIT__!
 
 ## How to use
 - Click 'Put your GitHub ID' , and type your GitHub ID.
-- Show the counts of your contributions by today, week, and month. 
-- Calendar shows your Git contributions as well. It supports recent 12 months.
+- It shows the number of contributions by day, week, and month. 
+- The calendar shows your Git contributions as well. It supports the recent 12 months.
 - Click fetch Icon on the right side to fetch recent contributions.
-- Take a widget supported as a calendar.
+- Get a widget supported as a calendar!
 
 
 ## Technology 
