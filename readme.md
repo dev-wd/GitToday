@@ -21,7 +21,7 @@ GitToday helps you to do __1 DAY, 1 COMMIT__!
 
 ### Design Pattern
 - Factory pattern
-- Signleton pattern
+- Singleton pattern
 - Repsotiroy pattern
 
 
@@ -35,10 +35,16 @@ GitToday helps you to do __1 DAY, 1 COMMIT__!
 ## Update
 - GitToday 1.0 : first release (waiting for review)
 
+## Requirements
+- Deployment target of iOS 10.0 or higher.
+
 ## Contributors 
 
 I always wait for your feedback.  
 Don't hesitate ☺️
+
+## Credits
+Created and maintained by Liam Sooyong Kim, © 2020.
 
 ## Contracts
 
