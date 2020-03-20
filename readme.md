@@ -1,4 +1,5 @@
-# GitToday
+# <img src="/screenshot/logo.png" align="center" width="35" height="35"> GitToday
+[<img src="/screenshot/appstoreimage.png" align="center" width="120" height="40"> ](https://apps.apple.com/kr/app/gittoday/id1502211763?l=en)
 
 Why don't you see __your contributions as a calendar on widget__?
 
@@ -33,10 +34,10 @@ GitToday helps you to do __1 DAY, 1 COMMIT__!
 
 
 ## Update
-- GitToday 1.0 : first release (waiting for review)
+- GitToday 1.0 : first release (20.03.20)
 
 ## Requirements
-- Deployment target of iOS 10.0 or higher.
+- Deployment target of iOS 13.2 or higher.
 
 ## Contributors 
 
