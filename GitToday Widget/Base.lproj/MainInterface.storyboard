@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,10 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cii-cu-AfK">
+                                <rect key="frame" x="68.5" y="125" width="183" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cii-cu-AfK" secondAttribute="height" multiplier="61:10" id="ST4-Yv-Kr5"/>
+                                    <constraint firstAttribute="width" secondItem="Cii-cu-AfK" secondAttribute="height" multiplier="61:10" id="xBf-zC-bli"/>
+                                </constraints>
+                                <state key="normal" title="Put your github ID">
+                                    <color key="titleColor" name="titleDefaultColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="userIDButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="iIY-Pf-w8O"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbE-Ts-bwG" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CmA-3h-xs9">
+                                        <rect key="frame" x="155" y="132" width="32" height="28"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="CmA-3h-xs9" firstAttribute="width" secondItem="HbE-Ts-bwG" secondAttribute="width" multiplier="0.1" id="FwK-hy-dOM"/>
+                                    <constraint firstItem="CmA-3h-xs9" firstAttribute="centerX" secondItem="HbE-Ts-bwG" secondAttribute="centerX" constant="11" id="JdK-b0-lUy"/>
+                                    <constraint firstItem="CmA-3h-xs9" firstAttribute="centerY" secondItem="HbE-Ts-bwG" secondAttribute="centerY" constant="6" id="YRf-Co-dib"/>
+                                    <constraint firstItem="CmA-3h-xs9" firstAttribute="height" secondItem="HbE-Ts-bwG" secondAttribute="height" multiplier="0.1" id="YzH-vu-UZv"/>
                                     <constraint firstAttribute="height" constant="280" id="lua-ZU-Bgr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -39,6 +62,16 @@
                                     <action selector="prevButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Ehu-fw-PcN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-8L-7sI">
+                                <rect key="frame" x="237" y="10" width="22.5" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bdj-8L-7sI" secondAttribute="height" multiplier="1:1" id="LKD-eb-Poi"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="gobackward" catalog="system">
+                                    <color key="titleColor" name="titleDefaultColor"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrF-s5-hhJ">
                                 <rect key="frame" x="267" y="6" width="42" height="30"/>
                                 <state key="normal" title="NEXT">
@@ -53,15 +86,20 @@
                             <constraint firstItem="QIB-Ki-uQ2" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="0.2" id="1Cx-ib-uoo"/>
                             <constraint firstItem="HbE-Ts-bwG" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="1PS-YT-W3U"/>
                             <constraint firstItem="HbE-Ts-bwG" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="6A3-GO-f9K"/>
+                            <constraint firstItem="Cii-cu-AfK" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.571875" id="6Q9-z6-fDX"/>
                             <constraint firstItem="TrF-s5-hhJ" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="1.8" id="7fg-CL-aqW"/>
+                            <constraint firstItem="bdj-8L-7sI" firstAttribute="centerY" secondItem="TrF-s5-hhJ" secondAttribute="centerY" id="C0h-W8-R60"/>
                             <constraint firstItem="HbE-Ts-bwG" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="CSh-93-nuO"/>
                             <constraint firstItem="QIB-Ki-uQ2" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" multiplier="0.15" id="DfQ-7G-79R"/>
                             <constraint firstItem="QIB-Ki-uQ2" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.107143" id="N2G-cc-Bur"/>
                             <constraint firstItem="TrF-s5-hhJ" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.13125" id="NMu-KY-mQv"/>
+                            <constraint firstItem="Cii-cu-AfK" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="Rzt-bY-A2Y"/>
                             <constraint firstItem="QIB-Ki-uQ2" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="0.11875" id="UtJ-aB-Gs6"/>
                             <constraint firstItem="HbE-Ts-bwG" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="ZWU-Yl-icO"/>
                             <constraint firstItem="TrF-s5-hhJ" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" multiplier="0.107143" id="ebn-g8-Bxe"/>
                             <constraint firstItem="TrF-s5-hhJ" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" multiplier="0.15" id="hfL-0b-Jqg"/>
+                            <constraint firstItem="bdj-8L-7sI" firstAttribute="leading" secondItem="TrF-s5-hhJ" secondAttribute="leading" constant="-30" id="qwS-LQ-Zwo"/>
+                            <constraint firstItem="Cii-cu-AfK" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="y2s-ms-Qkq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -70,13 +108,22 @@
                     <size key="freeformSize" width="320" height="280"/>
                     <connections>
                         <outlet property="calendar" destination="HbE-Ts-bwG" id="jxt-Ts-Ydn"/>
+                        <outlet property="indicator" destination="CmA-3h-xs9" id="P6B-7F-f3S"/>
                         <outlet property="nextButton" destination="TrF-s5-hhJ" id="uTC-lI-N2J"/>
                         <outlet property="prevButton" destination="QIB-Ki-uQ2" id="rAy-if-v1v"/>
+                        <outlet property="updateButton" destination="bdj-8L-7sI" id="DDh-sA-BSe"/>
+                        <outlet property="userIDButton" destination="Cii-cu-AfK" id="Iaz-Jt-Mve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="-92"/>
+            <point key="canvasLocation" x="18.840579710144929" y="-92.410714285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gobackward" catalog="system" width="60" height="64"/>
+        <namedColor name="titleDefaultColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
 </document>

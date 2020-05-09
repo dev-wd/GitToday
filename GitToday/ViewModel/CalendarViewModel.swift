@@ -40,7 +40,7 @@ class CalendarViewModel: CalendarViewBindable {
     func fetch() {
         isLoading.accept(true)
         useCase.fetchContributions() { error, id  in
-            
+             print("refetch")
             guard error != GitTodayError.userIDLoadError else {
                 self.isLoading.accept(false)
                 self.responseStatus.accept(.failed(error!))

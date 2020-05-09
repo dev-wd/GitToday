@@ -14,37 +14,39 @@ import RxCocoa
 
 
 protocol TodayViewBindable {
-    var isLoading: PublishRelay<Bool> { get }
-    //var responseStatus: PublishRelay<ResponseStatus> { get }
+    var isLoading: PublishSubject<Bool> { get }
+    var responseStatus: PublishSubject<ResponseStatus> { get }
     var doneButtonValidation: BehaviorRelay<Bool> { get }
     
     var todayCount: BehaviorRelay<Int> { get }
     var weekCount: BehaviorRelay<Int> { get }
     var monthCount: BehaviorRelay<Int> { get }
     
-    var step1: BehaviorRelay<[String]> { get }
-    var step2: BehaviorRelay<[String]> { get }
-    var step3: BehaviorRelay<[String]> { get }
-    var step4: BehaviorRelay<[String]> { get }
-    var step5: BehaviorRelay<[String]> { get }
-    
+    var step1: BehaviorSubject<[String]> { get }
+    var step2: BehaviorSubject<[String]> { get }
+    var step3: BehaviorSubject<[String]> { get }
+    var step4: BehaviorSubject<[String]> { get }
+    var step5: BehaviorSubject<[String]> { get }
     
     func fetch()
-    
 }
+
 class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelegate, FSCalendarDataSource,  FSCalendarDelegateAppearance {
     
+    @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var userIDButton: UIButton!
+    
+    private let backgroundScheduler = SerialDispatchQueueScheduler.init(qos: .background)
     
     var step1: [String] = []
     var step2: [String] = []
     var step3: [String] = []
     var step4: [String] = []
     var step5: [String] = []
-    
-    var standardMon: Int = 12
     
     var bag = DisposeBag()
     
@@ -64,7 +66,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         bind(viewModel: TodayViewModel())
         layout()
@@ -74,6 +75,44 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
     private func bind(viewModel:  TodayViewBindable) {
         viewModel.fetch()
         print("fetch")
+        
+        viewModel.isLoading
+            .bind(to: indicator.rx.isHidden)
+            .disposed(by: bag)
+        
+        
+        viewModel.responseStatus
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { val in
+                print("val: ",val)
+                switch val {
+                case .success:
+                    print("success")
+                    self.calendar.isHidden = false
+                    self.nextButton.isHidden = false
+                    self.prevButton.isHidden = false
+                    self.updateButton.isHidden = false
+                    self.userIDButton.isHidden = true
+                    self.calendar.reloadData()
+                case .failed(GitTodayError.userIDLoadError):
+                    print("put your github id")
+                    self.calendar.isHidden = true
+                    self.nextButton.isHidden = true
+                    self.updateButton.isHidden = true
+                    self.prevButton.isHidden = true
+                    self.userIDButton.isHidden = false
+                    
+                case .failed(_):
+                    print("unknown")
+                }
+            }).disposed(by: bag)
+        
+        updateButton.rx
+            .tap
+            .subscribe(onNext:{
+                viewModel.fetch()
+                self.calendar.reloadData()
+            }).disposed(by: bag)
         
         viewModel.step1
             .subscribe({ val in
@@ -110,9 +149,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
         calendar.appearance.borderRadius = 0.1
         calendar.appearance.selectionColor = UIColor(white: 1, alpha: 0)
         calendar.appearance.titleSelectionColor = UIColor.black
-        calendar.appearance.borderSelectionColor = UIColor.red
+        calendar.allowsSelection = false
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
         calendar.appearance.headerMinimumDissolvedAlpha = 0
+        calendar.appearance.titleDefaultColor = UIColor(named: "titleDefaultColor")
+        indicator.startAnimating()
+        userIDButton.isHidden = true
+        
     }
     
     internal func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -120,22 +163,32 @@ class TodayViewController: UIViewController, NCWidgetProviding, FSCalendarDelega
             calendar.scope = .month
             prevButton.isHidden = false
             nextButton.isHidden = false
+            updateButton.isHidden = false
             preferredContentSize = CGSize(width: 0, height: 280)
         } else {
             calendar.scope = .week
+            self.currentPage = Date()
+            self.calendar.setCurrentPage(self.currentPage!, animated: false)
             prevButton.isHidden = true
             nextButton.isHidden = true
+            updateButton.isHidden = true
             preferredContentSize = maxSize
         }
     }
     
+    @IBAction func userIDButtonTapped(_ sender: Any) {
+        let myAppUrl = NSURL(string: "calendarViewController://")!
+        extensionContext?.open(myAppUrl as URL, completionHandler: { (success) in
+            if (!success) {
+                print("failed")
+            }
+        })
+    }
     @IBAction func prevButtonTapped(_ sender: Any) {
-        print("tapped")
         self.moveCurrentPage(moveUp: false)
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        print("tapped")
         self.moveCurrentPage(moveUp: true)
     }
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -173,10 +226,7 @@ extension TodayViewController {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
         
-        if !(standardMon >= 12 && moveUp == true) && !(standardMon <= 0 && moveUp == false) {
-            standardMon +=  moveUp ? 1 : -1
-            dateComponents.month = moveUp ? 1 : -1
-        }
+        dateComponents.month = moveUp ? 1 : -1
         
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)

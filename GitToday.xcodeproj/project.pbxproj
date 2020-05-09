@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1803372A2440501200F7FF1F /* ThreadExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180337292440501200F7FF1F /* ThreadExtensions.swift */; };
+		1803372B2440504100F7FF1F /* ThreadExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180337292440501200F7FF1F /* ThreadExtensions.swift */; };
+		186E32642425FA3C00F8401B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E32632425FA3C00F8401B /* Colors.xcassets */; };
 		2BC9AC14E7CFA9F54AB8D96E /* Pods_GitToday_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC2238FB856C8B44B49389D /* Pods_GitToday_Widget.framework */; };
 		8400D0E428E5AFE6DDEEC313 /* Pods_GitToday_GitTodayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */; };
 		9AA8D2D4964F112A1E16DA9A /* Pods_GitTodayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5347CC5143069E26B4C65D6 /* Pods_GitTodayTests.framework */; };
@@ -96,6 +99,8 @@
 /* Begin PBXFileReference section */
 		09A752FB918FA7FD6CB34C3D /* Pods_GitToday_GitTodayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToday_GitTodayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E70B6B904F87759F36480F1 /* Pods-GitToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.release.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.release.xcconfig"; sourceTree = "<group>"; };
+		180337292440501200F7FF1F /* ThreadExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadExtensions.swift; sourceTree = "<group>"; };
+		186E32632425FA3C00F8401B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		58A27CD4481A8040337AD1A8 /* Pods-GitToday Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday Widget.release.xcconfig"; path = "Target Support Files/Pods-GitToday Widget/Pods-GitToday Widget.release.xcconfig"; sourceTree = "<group>"; };
 		692562ADB8DCA81FC3F14857 /* Pods-GitToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday.debug.xcconfig"; path = "Target Support Files/Pods-GitToday/Pods-GitToday.debug.xcconfig"; sourceTree = "<group>"; };
 		8B3C933D3231D95132B0705C /* Pods-GitToday-GitTodayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToday-GitTodayUITests.release.xcconfig"; path = "Target Support Files/Pods-GitToday-GitTodayUITests/Pods-GitToday-GitTodayUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC52E1824067A5000003112 /* UIColorExtensions.swift */,
+				180337292440501200F7FF1F /* ThreadExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				EA746A2224121C550073810B /* View */,
 				EAD2C64E23E2AE5200398B39 /* MainInterface.storyboard */,
 				EAD2C65123E2AE5200398B39 /* Info.plist */,
+				186E32632425FA3C00F8401B /* Colors.xcassets */,
 			);
 			path = "GitToday Widget";
 			sourceTree = "<group>";
@@ -524,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD2C65023E2AE5200398B39 /* MainInterface.storyboard in Resources */,
+				186E32642425FA3C00F8401B /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +672,7 @@
 				EA746A2F2412279E0073810B /* ResponseStatus.swift in Sources */,
 				EAC52E1924067A5000003112 /* UIColorExtensions.swift in Sources */,
 				EAD2C64323E296CF00398B39 /* ContributionAPI.swift in Sources */,
+				1803372A2440501200F7FF1F /* ThreadExtensions.swift in Sources */,
 				EAD2C66223E3F66B00398B39 /* UserDefaultAPI.swift in Sources */,
 				EAF73A1024174E56002C354F /* ContributionsUseCase.swift in Sources */,
 				EAD2C60923E295E900398B39 /* AppDelegate.swift in Sources */,
@@ -700,6 +709,7 @@
 				EA746A262412266A0073810B /* UIColorExtensions.swift in Sources */,
 				EA746A2D241226B00073810B /* Dot.swift in Sources */,
 				EA746A292412267B0073810B /* ContributionAPI.swift in Sources */,
+				1803372B2440504100F7FF1F /* ThreadExtensions.swift in Sources */,
 				EA746A30241227A50073810B /* ResponseStatus.swift in Sources */,
 				EA746A2C241226A30073810B /* KeyIdentifier.swift in Sources */,
 				EAD2C65E23E3EE7700398B39 /* TodayViewModel.swift in Sources */,

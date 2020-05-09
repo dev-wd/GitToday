@@ -43,6 +43,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var monthNumber: UILabel!
     
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var prevMonthButton: UIButton!
+    @IBOutlet weak var nextMonthButton: UIButton!
     
     private var step1: [String] = []
     private var step2: [String] = []
@@ -50,7 +52,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     private var step4: [String] = []
     private var step5: [String] = []
     
-    var standardMon: Int = 12
     
     var bag = DisposeBag()
     
@@ -78,7 +79,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     private func bind(viewModel:  CalendarViewBindable) {
         viewModel.fetch()
-        
+        print("fetch")
         viewModel.id
             .subscribe(onNext: { val in
                 guard val != "" else {
@@ -142,7 +143,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             }).disposed(by: bag)
         
         viewModel.responseStatus
-            .subscribe(onNext: {val in
+            .subscribe(onNext: { val in
                 self.resultHud.indicatorView = JGProgressHUDErrorIndicatorView()
                 switch val {
                 case .success:
@@ -195,10 +196,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scrollDirection = .vertical
+        calendar.allowsSelection = false
         calendar.appearance.borderRadius = 0.1
         calendar.appearance.selectionColor = UIColor(white: 1, alpha: 0)
         calendar.appearance.titleSelectionColor = UIColor.black
-        calendar.appearance.borderSelectionColor = UIColor.red
         calendar.appearance.todayColor = UIColor(white: 1, alpha: 0)
         
         idButtonTitle.titleLabel?.minimumScaleFactor = 0.5
@@ -248,10 +249,9 @@ extension CalendarViewController {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
         
-        if !(standardMon >= 12 && moveUp == true) && !(standardMon <= 0 && moveUp == false) {
-            standardMon +=  moveUp ? 1 : -1
-            dateComponents.month = moveUp ? 1 : -1
-        }
+        
+        
+        dateComponents.month = moveUp ? 1 : -1
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="np8-cE-tgG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="np8-cE-tgG">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,7 +148,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wTr-D1-yTD" secondAttribute="height" multiplier="29:23" id="zcT-te-0xb"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.23858278150000001" green="0.60814084290000003" blue="0.49819535910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.0" green="0.61881971359999999" blue="0.4926068783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" backgroundImage="chevron.up.square" catalog="system"/>
                                         <connections>
                                             <action selector="prevMonthTapped:" destination="np8-cE-tgG" eventType="touchUpInside" id="3aO-Vv-8WO"/>
@@ -159,7 +159,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8Ef-3g-nSr" secondAttribute="height" multiplier="29:23" id="NWC-t9-KzR"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.23858278150000001" green="0.60814084290000003" blue="0.49819535910000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.0" green="0.62280422449999995" blue="0.49245315789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" backgroundImage="chevron.down.square" catalog="system"/>
                                         <connections>
                                             <action selector="nextMonthTapped:" destination="np8-cE-tgG" eventType="touchUpInside" id="KG2-Gw-0VR"/>
@@ -228,6 +228,8 @@
                         <outlet property="calendar" destination="Gn6-G1-V8t" id="ba9-Wo-GAU"/>
                         <outlet property="idButtonTitle" destination="hMG-T0-dEX" id="Ur1-9r-gtd"/>
                         <outlet property="monthNumber" destination="7c4-nT-0ol" id="D1U-bG-Kdx"/>
+                        <outlet property="nextMonthButton" destination="8Ef-3g-nSr" id="Eek-qR-XEQ"/>
+                        <outlet property="prevMonthButton" destination="wTr-D1-yTD" id="5JC-p1-PX5"/>
                         <outlet property="todayNumber" destination="X0n-lg-ejz" id="775-7M-4iY"/>
                         <outlet property="updateButton" destination="sYN-yF-DrT" id="qJD-TG-208"/>
                         <outlet property="weekNumber" destination="WBY-DR-ZNj" id="typ-b1-R1R"/>
