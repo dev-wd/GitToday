@@ -20,13 +20,16 @@ class ContributionAPI : ContributionAPIProtocol {
         var dots : [Dot] = []
         if let url = URL(string: "https://github.com/users/"+id+"/contributions") {
             do {
+                
                 let contents = try String(contentsOf: url)
                 let doc: Document = try SwiftSoup.parse(contents)
                 let total: Element = try doc.select("g").first()!
                 let totalDots : Elements = total.children()
+                
                 for i in 0...52 {
                     let weektotalDots: Elements = totalDots.get(i).children()
-                    for j in 0...weektotalDots.count-1 {
+                    for j in 0...weektotalDots.count - 1 {
+                        
                         let dataDate : String = try weektotalDots.get(j).attr("data-date")
                         dots.append(Dot(id: i*7 + j,
                                         date: dataDate,

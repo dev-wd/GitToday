@@ -57,7 +57,7 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
     }
     
     var step2: [String] {
-        let step2Color: String = "#c6e48b"
+        let step2Color: String = "#9be9a8"
         var step2Dates: [String] = []
         let step2 = dots?.filter{ $0.color == step2Color}
         step2?.forEach{ step2Dates.append($0.date) }
@@ -65,7 +65,7 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
     }
     
     var step3: [String] {
-        let step3Color: String = "#7bc96f"
+        let step3Color: String = "#40c463"
         var step3Dates: [String] = []
         let step3 = dots?.filter{ $0.color == step3Color}
         step3?.forEach{ step3Dates.append($0.date) }
@@ -73,14 +73,14 @@ class ContributionsRepository: ContributionsRepositoryProtocol {
     }
     
     var step4: [String] {
-        let step4Color: String = "#239a3b"
+        let step4Color: String = "#30a14e"
         var step4Dates: [String] = []
-        let step4 = dots?.filter{ $0.color == step4Color}
+        let step4 = dots?.filter{ $0.color == step4Color }
         step4?.forEach{ step4Dates.append($0.date) }
         return step4Dates
     }
     var step5: [String] {
-        let step5Color: String = "#196127"
+        let step5Color: String = "#216e39"
         var step5Dates: [String] = []
         let step5 = dots?.filter{ $0.color == step5Color}
         step5?.forEach{ step5Dates.append($0.date) }
