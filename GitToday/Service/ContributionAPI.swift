@@ -18,12 +18,13 @@ class ContributionAPI : ContributionAPIProtocol {
     
     func fetchDots(id: String, completion: @escaping ([Dot]?, GitTodayError?)-> Void) {
         var dots : [Dot] = []
-        if let url = URL(string: "https://github.com/users/"+id+"/contributions") {
+        if let url = URL(string: "https://github.com/\(id)") {
             do {
                 
                 let contents = try String(contentsOf: url)
                 let doc: Document = try SwiftSoup.parse(contents)
-                let total: Element = try doc.select("g").first()!
+                let total: Element =  try doc.select("svg").attr("class", "js-calendar-graph-svg").select("g").first()!
+                
                 let totalDots : Elements = total.children()
                 
                 for i in 0...52 {
@@ -35,6 +36,7 @@ class ContributionAPI : ContributionAPIProtocol {
                                         date: dataDate,
                                         color: try weektotalDots.get(j).attr("fill"),
                                         count: Int(try weektotalDots.get(j).attr("data-count"))!))
+                        
                     }
                 }
                 completion(dots, nil)

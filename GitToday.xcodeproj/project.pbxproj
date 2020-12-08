@@ -878,8 +878,9 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitToday/GitToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sooyong Kim (X7AF2T5392)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = GitToday/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -887,10 +888,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sooyong.GitToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GitToday_store;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -903,8 +905,9 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitToday/GitToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sooyong Kim (X7AF2T5392)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = GitToday/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -912,10 +915,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sooyong.GitToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = GitToday_store;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1015,8 +1019,9 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = "GitToday Widget/GitToday Widget.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sooyong Kim (X7AF2T5392)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = "GitToday Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1025,10 +1030,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sooyong.GitToday.GitToday-Widget";
 				PRODUCT_NAME = "GitToday Widget";
-				PROVISIONING_PROFILE_SPECIFIER = GitTodayWidget_store;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1041,8 +1047,9 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_ENTITLEMENTS = "GitToday Widget/GitToday Widget.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sooyong Kim (X7AF2T5392)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = X7AF2T5392;
 				INFOPLIST_FILE = "GitToday Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1051,10 +1058,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sooyong.GitToday.GitToday-Widget";
 				PRODUCT_NAME = "GitToday Widget";
-				PROVISIONING_PROFILE_SPECIFIER = GitTodayWidget_store;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
